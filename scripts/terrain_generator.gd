@@ -125,5 +125,5 @@ func _choose_chunk_index() -> int:
 	return selected
 
 func _palette_for_chunk(chunk_index: int) -> int:
-	var palette_index := int(chunk_index / 4) % PALETTE_ATLAS_COLUMNS.size()
+	var palette_index := floori(float(chunk_index) / 4.0) % PALETTE_ATLAS_COLUMNS.size()
 	return PALETTE_ATLAS_COLUMNS[palette_index]

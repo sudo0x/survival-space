@@ -203,12 +203,12 @@ func _select_style(style_id: String) -> void:
 
 func _apply_style_preview() -> void:
 	var palette: Array = STYLE_COLORS[_character_style]
-	var material := ShaderMaterial.new()
-	material.shader = KNIGHT_STYLE_SHADER
-	material.set_shader_parameter("tunic_color", palette[0])
-	material.set_shader_parameter("plume_color", palette[1])
-	_portrait.material = material
-	_large_portrait.material = material
+	var style_material := ShaderMaterial.new()
+	style_material.shader = KNIGHT_STYLE_SHADER
+	style_material.set_shader_parameter("tunic_color", palette[0])
+	style_material.set_shader_parameter("plume_color", palette[1])
+	_portrait.material = style_material
+	_large_portrait.material = style_material
 	var grid: Node = $Shell/Body/MainPanel/Margin/MainStack/Pages/ArmoryPage/ArmoryStack/StyleGrid
 	for style_id in STYLE_COLORS:
 		var button: Button = grid.get_node(style_id.capitalize()) as Button

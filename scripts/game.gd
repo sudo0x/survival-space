@@ -184,7 +184,7 @@ func _setup_gameplay_actions() -> void:
 
 func _add_mouse_button_binding(action: StringName, button_index: int) -> void:
 	var mouse_button := InputEventMouseButton.new()
-	mouse_button.button_index = button_index
+	mouse_button.button_index = button_index as MouseButton
 	if not InputMap.action_has_event(action, mouse_button):
 		InputMap.action_add_event(action, mouse_button)
 

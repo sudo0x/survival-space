@@ -113,8 +113,8 @@ func _update_homing(delta: float) -> void:
 		return
 	desired_direction = desired_direction.normalized()
 	var max_turn := deg_to_rad(homing_turn_rate) * delta
-	var angle_difference := travel_direction.angle_to(desired_direction)
-	travel_direction = travel_direction.rotated(clampf(angle_difference, -max_turn, max_turn)).normalized()
+	var turn_angle := travel_direction.angle_to(desired_direction)
+	travel_direction = travel_direction.rotated(clampf(turn_angle, -max_turn, max_turn)).normalized()
 	_apply_direction()
 
 

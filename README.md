@@ -25,7 +25,7 @@ Open this folder in Godot and press **F5** to run the project. It starts at `sce
 - Enemy and pickup scenes own their behavior and emit `GameEvents` notifications for run-level rewards and counters.
 - `SwarmDirector` owns enemy-wave scheduling and spawning. It resets at the start of each run and stops when the Guardian encounter begins.
 
-The current run timer is set to two minutes for quick Guardian testing. Change `run_duration_seconds` on the Game node in `scense/game.tscn`; restore it to `480` for an eight-minute run.
+The normal run lasts eight minutes before the Guardian encounter. Adjust `run_duration_seconds` on the Game node in `scense/game.tscn` when tuning the run length.
 
 ## Editing terrain
 

@@ -216,4 +216,3 @@ func _player_forward_side(player: Node2D) -> float:
 	if player_sprite != null and player_sprite.flip_h:
 		return -1.0
 	return 1.0
-

@@ -146,8 +146,8 @@ _data = {
 
 [node name="Game" type="Node2D" unique_id=160902187]
 script = ExtResource("8_game")
-show_touch_controls_on_desktop = true
-run_duration_seconds = 120.0
+show_touch_controls_on_desktop = false
+run_duration_seconds = 480.0
 
 [node name="SwarmDirector" type="Node" parent="."]
 script = ExtResource("20_swarm_director")

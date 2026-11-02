@@ -18,7 +18,7 @@ static func apply_saved_bindings() -> void:
 		InputMap.action_erase_events(action)
 		var keycode := saved_key_for(action)
 		var key_event := InputEventKey.new()
-		key_event.physical_keycode = keycode
+		key_event.physical_keycode = keycode as Key
 		InputMap.action_add_event(action, key_event)
 	if not InputMap.has_action("air_dive_down"):
 		InputMap.add_action("air_dive_down")
