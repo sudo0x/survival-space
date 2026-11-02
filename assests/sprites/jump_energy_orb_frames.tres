@@ -1,0 +1,33 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://cqq2iwvumlr03"]
+
+[sub_resource type="AtlasTexture" id="Orb0"]
+region = Rect2(0, 0, 543, 724)
+
+[sub_resource type="AtlasTexture" id="Orb1"]
+region = Rect2(543, 0, 543, 724)
+
+[sub_resource type="AtlasTexture" id="Orb2"]
+region = Rect2(1086, 0, 543, 724)
+
+[sub_resource type="AtlasTexture" id="Orb3"]
+region = Rect2(1629, 0, 543, 724)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("Orb0")
+}, {
+"duration": 1.0,
+"texture": SubResource("Orb1")
+}, {
+"duration": 1.0,
+"texture": SubResource("Orb2")
+}, {
+"duration": 1.0,
+"texture": SubResource("Orb3")
+}],
+"loop": 1,
+"name": &"orb",
+"speed": 8.0
+}]

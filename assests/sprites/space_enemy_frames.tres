@@ -1,0 +1,72 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://1u74abyr4hbr"]
+
+[ext_resource type="Texture2D" uid="uid://c1l72y1e4cfpq" path="res://assests/sprites/space_enemies.png" id="1_atlas"]
+
+[sub_resource type="AtlasTexture" id="Jelly0"]
+atlas = ExtResource("1_atlas")
+region = Rect2(0, 443.5, 443.5, 443.5)
+
+[sub_resource type="AtlasTexture" id="Jelly1"]
+atlas = ExtResource("1_atlas")
+region = Rect2(443.5, 443.5, 443.5, 443.5)
+
+[sub_resource type="AtlasTexture" id="Jelly2"]
+atlas = ExtResource("1_atlas")
+region = Rect2(887, 443.5, 443.5, 443.5)
+
+[sub_resource type="AtlasTexture" id="Jelly3"]
+atlas = ExtResource("1_atlas")
+region = Rect2(1330.5, 443.5, 443.5, 443.5)
+
+[sub_resource type="AtlasTexture" id="Crab0"]
+atlas = ExtResource("1_atlas")
+region = Rect2(0, 0, 443.5, 443.5)
+
+[sub_resource type="AtlasTexture" id="Crab1"]
+atlas = ExtResource("1_atlas")
+region = Rect2(443.5, 0, 443.5, 443.5)
+
+[sub_resource type="AtlasTexture" id="Crab2"]
+atlas = ExtResource("1_atlas")
+region = Rect2(887, 0, 443.5, 443.5)
+
+[sub_resource type="AtlasTexture" id="Crab3"]
+atlas = ExtResource("1_atlas")
+region = Rect2(1330.5, 0, 443.5, 443.5)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("Jelly0")
+}, {
+"duration": 1.0,
+"texture": SubResource("Jelly1")
+}, {
+"duration": 1.0,
+"texture": SubResource("Jelly2")
+}, {
+"duration": 1.0,
+"texture": SubResource("Jelly3")
+}],
+"loop": 1,
+"name": &"comet_jelly_hover",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("Crab0")
+}, {
+"duration": 1.0,
+"texture": SubResource("Crab1")
+}, {
+"duration": 1.0,
+"texture": SubResource("Crab2")
+}, {
+"duration": 1.0,
+"texture": SubResource("Crab3")
+}],
+"loop": 1,
+"name": &"rift_crab_walk",
+"speed": 7.0
+}]

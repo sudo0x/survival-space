@@ -1,0 +1,133 @@
+[gd_resource type="SpriteFrames" load_steps=27 format=3]
+
+[ext_resource type="Texture2D" path="res://assests/sprites/survival_enemies_sheet.png" id="1_sheet"]
+[ext_resource type="Texture2D" path="res://assests/sprites/survival_fly_enemies_sheet.png" id="2_fly_sheet"]
+
+[sub_resource type="AtlasTexture" id="Moth0"]
+atlas = ExtResource("1_sheet")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="Moth1"]
+atlas = ExtResource("1_sheet")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="Moth2"]
+atlas = ExtResource("1_sheet")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="Moth3"]
+atlas = ExtResource("1_sheet")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="Hound0"]
+atlas = ExtResource("1_sheet")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="Hound1"]
+atlas = ExtResource("1_sheet")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="Hound2"]
+atlas = ExtResource("1_sheet")
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="Hound3"]
+atlas = ExtResource("1_sheet")
+region = Rect2(192, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="Sentry0"]
+atlas = ExtResource("1_sheet")
+region = Rect2(0, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="Sentry1"]
+atlas = ExtResource("1_sheet")
+region = Rect2(64, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="Sentry2"]
+atlas = ExtResource("1_sheet")
+region = Rect2(128, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="Sentry3"]
+atlas = ExtResource("1_sheet")
+region = Rect2(192, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="Scythe0"]
+atlas = ExtResource("2_fly_sheet")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="Scythe1"]
+atlas = ExtResource("2_fly_sheet")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="Scythe2"]
+atlas = ExtResource("2_fly_sheet")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="Scythe3"]
+atlas = ExtResource("2_fly_sheet")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="Eel0"]
+atlas = ExtResource("2_fly_sheet")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="Eel1"]
+atlas = ExtResource("2_fly_sheet")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="Eel2"]
+atlas = ExtResource("2_fly_sheet")
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="Eel3"]
+atlas = ExtResource("2_fly_sheet")
+region = Rect2(192, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="Wasp0"]
+atlas = ExtResource("2_fly_sheet")
+region = Rect2(0, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="Wasp1"]
+atlas = ExtResource("2_fly_sheet")
+region = Rect2(64, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="Wasp2"]
+atlas = ExtResource("2_fly_sheet")
+region = Rect2(128, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="Wasp3"]
+atlas = ExtResource("2_fly_sheet")
+region = Rect2(192, 128, 64, 64)
+
+[resource]
+animations = [{
+"frames": [{"duration": 1.0, "texture": SubResource("Moth0")}, {"duration": 1.0, "texture": SubResource("Moth1")}, {"duration": 1.0, "texture": SubResource("Moth2")}, {"duration": 1.0, "texture": SubResource("Moth3")}],
+"loop": 1,
+"name": &"rift_moth_fly",
+"speed": 9.0
+}, {
+"frames": [{"duration": 1.0, "texture": SubResource("Hound0")}, {"duration": 1.0, "texture": SubResource("Hound1")}, {"duration": 1.0, "texture": SubResource("Hound2")}, {"duration": 1.0, "texture": SubResource("Hound3")}],
+"loop": 1,
+"name": &"comet_hound_run",
+"speed": 10.0
+}, {
+"frames": [{"duration": 1.0, "texture": SubResource("Sentry0")}, {"duration": 1.0, "texture": SubResource("Sentry1")}, {"duration": 1.0, "texture": SubResource("Sentry2")}, {"duration": 1.0, "texture": SubResource("Sentry3")}],
+"loop": 1,
+"name": &"prism_sentry_idle",
+"speed": 6.0
+}, {
+"frames": [{"duration": 1.0, "texture": SubResource("Scythe0")}, {"duration": 1.0, "texture": SubResource("Scythe1")}, {"duration": 1.0, "texture": SubResource("Scythe2")}, {"duration": 1.0, "texture": SubResource("Scythe3")}],
+"loop": 1,
+"name": &"star_scythe_fly",
+"speed": 8.0
+}, {
+"frames": [{"duration": 1.0, "texture": SubResource("Eel0")}, {"duration": 1.0, "texture": SubResource("Eel1")}, {"duration": 1.0, "texture": SubResource("Eel2")}, {"duration": 1.0, "texture": SubResource("Eel3")}],
+"loop": 1,
+"name": &"rift_eel_fly",
+"speed": 8.0
+}, {
+"frames": [{"duration": 1.0, "texture": SubResource("Wasp0")}, {"duration": 1.0, "texture": SubResource("Wasp1")}, {"duration": 1.0, "texture": SubResource("Wasp2")}, {"duration": 1.0, "texture": SubResource("Wasp3")}],
+"loop": 1,
+"name": &"solar_wasp_fly",
+"speed": 10.0
+}]

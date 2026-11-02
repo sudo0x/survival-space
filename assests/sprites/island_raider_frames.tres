@@ -1,0 +1,39 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://fxbm22pcfauv"]
+
+[ext_resource type="Texture2D" uid="uid://ba24vsmcb1g7n" path="res://assests/sprites/island_raider.png" id="1_sheet"]
+
+[sub_resource type="AtlasTexture" id="Atlas_raider_0"]
+atlas = ExtResource("1_sheet")
+region = Rect2(0, 0, 543, 724)
+
+[sub_resource type="AtlasTexture" id="Atlas_raider_1"]
+atlas = ExtResource("1_sheet")
+region = Rect2(543, 0, 543, 724)
+
+[sub_resource type="AtlasTexture" id="Atlas_raider_2"]
+atlas = ExtResource("1_sheet")
+region = Rect2(1086, 0, 543, 724)
+
+[sub_resource type="AtlasTexture" id="Atlas_raider_3"]
+atlas = ExtResource("1_sheet")
+region = Rect2(1629, 0, 543, 724)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("Atlas_raider_0")
+}, {
+"duration": 1.0,
+"texture": SubResource("Atlas_raider_1")
+}, {
+"duration": 1.0,
+"texture": SubResource("Atlas_raider_2")
+}, {
+"duration": 1.0,
+"texture": SubResource("Atlas_raider_3")
+}],
+"loop": 1,
+"name": &"walk",
+"speed": 7.0
+}]

@@ -1,0 +1,105 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://dlp3atyvwbtff"]
+
+[ext_resource type="Texture2D" uid="uid://di4lwl0l74mpm" path="res://assests/sprites/reward_pickups.png" id="1_atlas"]
+
+[sub_resource type="AtlasTexture" id="XP0"]
+atlas = ExtResource("1_atlas")
+region = Rect2(0, 0, 362, 362)
+
+[sub_resource type="AtlasTexture" id="XP1"]
+atlas = ExtResource("1_atlas")
+region = Rect2(362, 0, 362, 362)
+
+[sub_resource type="AtlasTexture" id="XP2"]
+atlas = ExtResource("1_atlas")
+region = Rect2(724, 0, 362, 362)
+
+[sub_resource type="AtlasTexture" id="XP3"]
+atlas = ExtResource("1_atlas")
+region = Rect2(1086, 0, 362, 362)
+
+[sub_resource type="AtlasTexture" id="Health0"]
+atlas = ExtResource("1_atlas")
+region = Rect2(0, 362, 362, 362)
+
+[sub_resource type="AtlasTexture" id="Health1"]
+atlas = ExtResource("1_atlas")
+region = Rect2(362, 362, 362, 362)
+
+[sub_resource type="AtlasTexture" id="Health2"]
+atlas = ExtResource("1_atlas")
+region = Rect2(724, 362, 362, 362)
+
+[sub_resource type="AtlasTexture" id="Health3"]
+atlas = ExtResource("1_atlas")
+region = Rect2(1086, 362, 362, 362)
+
+[sub_resource type="AtlasTexture" id="Magic0"]
+atlas = ExtResource("1_atlas")
+region = Rect2(0, 724, 362, 362)
+
+[sub_resource type="AtlasTexture" id="Magic1"]
+atlas = ExtResource("1_atlas")
+region = Rect2(362, 724, 362, 362)
+
+[sub_resource type="AtlasTexture" id="Magic2"]
+atlas = ExtResource("1_atlas")
+region = Rect2(724, 724, 362, 362)
+
+[sub_resource type="AtlasTexture" id="Magic3"]
+atlas = ExtResource("1_atlas")
+region = Rect2(1086, 724, 362, 362)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("XP0")
+}, {
+"duration": 1.0,
+"texture": SubResource("XP1")
+}, {
+"duration": 1.0,
+"texture": SubResource("XP2")
+}, {
+"duration": 1.0,
+"texture": SubResource("XP3")
+}],
+"loop": 1,
+"name": &"experience",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("Health0")
+}, {
+"duration": 1.0,
+"texture": SubResource("Health1")
+}, {
+"duration": 1.0,
+"texture": SubResource("Health2")
+}, {
+"duration": 1.0,
+"texture": SubResource("Health3")
+}],
+"loop": 1,
+"name": &"health",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("Magic0")
+}, {
+"duration": 1.0,
+"texture": SubResource("Magic1")
+}, {
+"duration": 1.0,
+"texture": SubResource("Magic2")
+}, {
+"duration": 1.0,
+"texture": SubResource("Magic3")
+}],
+"loop": 1,
+"name": &"magic",
+"speed": 8.0
+}]

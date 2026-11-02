@@ -1,0 +1,140 @@
+[gd_scene format=3 uid="uid://tiafx2xusijq"]
+
+[ext_resource type="Texture2D" uid="uid://d4fsocvl3fgbp" path="res://assests/sprites/ancient_spring_sheet.png" id="1_sheet"]
+[ext_resource type="Script" uid="uid://dwsqkl683udj1" path="res://scripts/spring_pad.gd" id="2_script"]
+
+[sub_resource type="AtlasTexture" id="Atlas_idle"]
+atlas = ExtResource("1_sheet")
+region = Rect2(0, 80, 512, 640)
+
+[sub_resource type="AtlasTexture" id="Atlas_launch"]
+atlas = ExtResource("1_sheet")
+region = Rect2(1024, 80, 512, 640)
+
+[sub_resource type="AtlasTexture" id="Atlas_pressed"]
+atlas = ExtResource("1_sheet")
+region = Rect2(512, 80, 512, 640)
+
+[sub_resource type="AtlasTexture" id="Atlas_recover"]
+atlas = ExtResource("1_sheet")
+region = Rect2(1536, 80, 512, 640)
+
+[sub_resource type="SpriteFrames" id="SpringSpriteFrames"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("Atlas_idle")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("Atlas_launch")
+}],
+"loop": 1,
+"name": &"launch",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("Atlas_pressed")
+}],
+"loop": 1,
+"name": &"pressed",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("Atlas_recover")
+}],
+"loop": 1,
+"name": &"recover",
+"speed": 1.0
+}]
+
+[sub_resource type="RectangleShape2D" id="SpringTriggerShape"]
+size = Vector2(21, 24)
+
+[sub_resource type="Animation" id="SpringIdleAnimation"]
+resource_name = "idle_breathe"
+length = 1.2
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.07, 0.07), Vector2(0.071, 0.069), Vector2(0.07, 0.07)]
+}
+
+[sub_resource type="Animation" id="SpringLaunchAnimation"]
+resource_name = "launch_sequence"
+length = 0.42
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 0
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.08, 0.18, 0.3, 0.42),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [&"pressed", &"launch", &"recover", &"idle", &"idle"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.08, 0.18, 0.3, 0.42),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -18), Vector2(0, -13), Vector2(0, -24), Vector2(0, -18), Vector2(0, -18)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimatedSprite2D:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = false
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.08, 0.18, 0.3, 0.42),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0.07, 0.07), Vector2(0.07, 0.05), Vector2(0.075, 0.082), Vector2(0.07, 0.07), Vector2(0.07, 0.07)]
+}
+
+[sub_resource type="AnimationLibrary" id="SpringAnimationLibrary"]
+_data = {
+&"idle_breathe": SubResource("SpringIdleAnimation"),
+&"launch_sequence": SubResource("SpringLaunchAnimation")
+}
+
+[node name="SpringPad" type="Area2D" unique_id=985442878]
+collision_layer = 0
+script = ExtResource("2_script")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1592211959]
+texture_filter = 1
+position = Vector2(0, -18)
+scale = Vector2(0.07, 0.07)
+sprite_frames = SubResource("SpringSpriteFrames")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=982107114]
+position = Vector2(0.5, -12)
+shape = SubResource("SpringTriggerShape")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1489163313]
+libraries/ = SubResource("SpringAnimationLibrary")
+autoplay = &"idle_breathe"

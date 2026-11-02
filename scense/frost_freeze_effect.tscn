@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="SpriteFrames" path="res://assests/sprites/frost_freeze_growth_frames.tres" id="1_frames"]
+[ext_resource type="Script" path="res://scripts/frost_freeze_effect.gd" id="2_script"]
+
+[node name="FrostFreezeEffect" type="AnimatedSprite2D"]
+z_index = 4
+texture_filter = 1
+sprite_frames = ExtResource("1_frames")
+animation = &"freeze_shell"
+script = ExtResource("2_script")

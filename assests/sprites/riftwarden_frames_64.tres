@@ -1,0 +1,254 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://cab55sjquw8kf"]
+
+[ext_resource type="Texture2D" uid="uid://bp58lnfxv0hic" path="res://assests/sprites/riftwarden_sheet_64.png" id="1_sheet"]
+[ext_resource type="Texture2D" path="res://assests/sprites/riftwarden_roll_sheet.png" id="2_roll"]
+
+[sub_resource type="AtlasTexture" id="roll_0"]
+atlas = ExtResource("2_roll")
+region = Rect2(0, 0, 496, 793)
+
+[sub_resource type="AtlasTexture" id="roll_1"]
+atlas = ExtResource("2_roll")
+region = Rect2(496, 0, 495, 793)
+
+[sub_resource type="AtlasTexture" id="roll_2"]
+atlas = ExtResource("2_roll")
+region = Rect2(991, 0, 496, 793)
+
+[sub_resource type="AtlasTexture" id="roll_3"]
+atlas = ExtResource("2_roll")
+region = Rect2(1487, 0, 496, 793)
+
+[sub_resource type="AtlasTexture" id="rw64_3_0"]
+atlas = ExtResource("1_sheet")
+region = Rect2(0, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="rw64_3_1"]
+atlas = ExtResource("1_sheet")
+region = Rect2(64, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="rw64_3_2"]
+atlas = ExtResource("1_sheet")
+region = Rect2(128, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="rw64_3_3"]
+atlas = ExtResource("1_sheet")
+region = Rect2(192, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="rw64_5_0"]
+atlas = ExtResource("1_sheet")
+region = Rect2(0, 320, 64, 64)
+
+[sub_resource type="AtlasTexture" id="rw64_5_1"]
+atlas = ExtResource("1_sheet")
+region = Rect2(64, 320, 64, 64)
+
+[sub_resource type="AtlasTexture" id="rw64_5_2"]
+atlas = ExtResource("1_sheet")
+region = Rect2(128, 320, 64, 64)
+
+[sub_resource type="AtlasTexture" id="rw64_5_3"]
+atlas = ExtResource("1_sheet")
+region = Rect2(192, 320, 64, 64)
+
+[sub_resource type="AtlasTexture" id="rw64_2_0"]
+atlas = ExtResource("1_sheet")
+region = Rect2(0, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="rw64_2_1"]
+atlas = ExtResource("1_sheet")
+region = Rect2(64, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="rw64_2_2"]
+atlas = ExtResource("1_sheet")
+region = Rect2(128, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="rw64_2_3"]
+atlas = ExtResource("1_sheet")
+region = Rect2(192, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="rw64_4_0"]
+atlas = ExtResource("1_sheet")
+region = Rect2(0, 256, 64, 64)
+
+[sub_resource type="AtlasTexture" id="rw64_4_1"]
+atlas = ExtResource("1_sheet")
+region = Rect2(64, 256, 64, 64)
+
+[sub_resource type="AtlasTexture" id="rw64_4_2"]
+atlas = ExtResource("1_sheet")
+region = Rect2(128, 256, 64, 64)
+
+[sub_resource type="AtlasTexture" id="rw64_4_3"]
+atlas = ExtResource("1_sheet")
+region = Rect2(192, 256, 64, 64)
+
+[sub_resource type="AtlasTexture" id="rw64_0_0"]
+atlas = ExtResource("1_sheet")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="rw64_0_1"]
+atlas = ExtResource("1_sheet")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="rw64_0_2"]
+atlas = ExtResource("1_sheet")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="rw64_0_3"]
+atlas = ExtResource("1_sheet")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="rw64_1_0"]
+atlas = ExtResource("1_sheet")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="rw64_1_1"]
+atlas = ExtResource("1_sheet")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="rw64_1_2"]
+atlas = ExtResource("1_sheet")
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="rw64_1_3"]
+atlas = ExtResource("1_sheet")
+region = Rect2(192, 64, 64, 64)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("rw64_3_0")
+}, {
+"duration": 1.0,
+"texture": SubResource("rw64_3_1")
+}, {
+"duration": 1.0,
+"texture": SubResource("rw64_3_2")
+}, {
+"duration": 1.0,
+"texture": SubResource("rw64_3_3")
+}],
+"loop": 0,
+"name": &"attack",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("rw64_5_0")
+}, {
+"duration": 1.0,
+"texture": SubResource("rw64_5_1")
+}, {
+"duration": 1.0,
+"texture": SubResource("rw64_5_2")
+}, {
+"duration": 1.0,
+"texture": SubResource("rw64_5_3")
+}],
+"loop": 0,
+"name": &"death",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("rw64_2_0")
+}, {
+"duration": 1.0,
+"texture": SubResource("rw64_2_1")
+}, {
+"duration": 1.0,
+"texture": SubResource("rw64_2_2")
+}, {
+"duration": 1.0,
+"texture": SubResource("rw64_2_3")
+}],
+"loop": 0,
+"name": &"double_jump",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("rw64_2_0")
+}, {
+"duration": 1.0,
+"texture": SubResource("rw64_2_1")
+}, {
+"duration": 1.0,
+"texture": SubResource("rw64_2_2")
+}, {
+"duration": 1.0,
+"texture": SubResource("rw64_2_3")
+}],
+"loop": 1,
+"name": &"fly",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("rw64_4_0")
+}, {
+"duration": 1.0,
+"texture": SubResource("rw64_4_1")
+}, {
+"duration": 1.0,
+"texture": SubResource("rw64_4_2")
+}, {
+"duration": 1.0,
+"texture": SubResource("rw64_4_3")
+}],
+"loop": 0,
+"name": &"hurt",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("rw64_0_0")
+}, {
+"duration": 1.0,
+"texture": SubResource("rw64_0_1")
+}, {
+"duration": 1.0,
+"texture": SubResource("rw64_0_2")
+}, {
+"duration": 1.0,
+"texture": SubResource("rw64_0_3")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("rw64_2_0")
+}, {
+"duration": 1.0,
+"texture": SubResource("rw64_2_1")
+}],
+"loop": 0,
+"name": &"jump",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("rw64_1_0")
+}, {
+"duration": 1.0,
+"texture": SubResource("rw64_1_1")
+}, {
+"duration": 1.0,
+"texture": SubResource("rw64_1_2")
+}, {
+"duration": 1.0,
+"texture": SubResource("rw64_1_3")
+}],
+"loop": 1,
+"name": &"run",
+"speed": 11.0
+}, {
+"frames": [{"duration": 1.0, "texture": SubResource("roll_0")}, {"duration": 1.0, "texture": SubResource("roll_1")}, {"duration": 1.0, "texture": SubResource("roll_2")}, {"duration": 1.0, "texture": SubResource("roll_3")}],
+"loop": 1,
+"name": &"air_dive_roll",
+"speed": 16.0
+}]

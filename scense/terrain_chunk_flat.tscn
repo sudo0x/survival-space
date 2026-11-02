@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="PackedScene" path="res://scense/terrain_chunk_base.tscn" id="1_base"]
+
+[node name="FlatRun" instance=ExtResource("1_base")]
+surface_profile = PackedInt32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)

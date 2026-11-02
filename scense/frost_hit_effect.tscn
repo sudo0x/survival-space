@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="SpriteFrames" path="res://assests/sprites/frost_hit_frames.tres" id="1_frames"]
+[ext_resource type="AudioStream" path="res://assests/sounds/ice_freeze_chip.wav" id="2_ice_sound"]
+
+[node name="FrostHitEffect" type="Node2D"]
+z_index = 17
+
+[node name="IceBurst" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(0.056, 0.056)
+sprite_frames = ExtResource("1_frames")
+animation = &"impact"
+autoplay = "impact"
+
+[node name="IceHitSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_ice_sound")
+volume_db = -3.0
+max_polyphony = 1
+autoplay = true
+
+[node name="CleanupTimer" type="Timer" parent="."]
+wait_time = 0.45
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="CleanupTimer" to="." method="queue_free"]

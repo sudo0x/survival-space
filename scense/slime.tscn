@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://0e8wmqbqnw0t"]
+
+[ext_resource type="Script" uid="uid://df5fg1l1nonqb" path="res://scripts/slime.gd" id="1"]
+[ext_resource type="SpriteFrames" uid="uid://byb53ujlbu8d8" path="res://assests/sprites/enemy_sprite_frames.tres" id="2"]
+
+[sub_resource type="RectangleShape2D" id="Shape"]
+size = Vector2(14, 9)
+
+[sub_resource type="Animation" id="EnemyHitFlashAnimation"]
+resource_name = "hit_flash"
+length = 0.12
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.12),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 0.4, 0.32, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="EnemyAnimationLibrary"]
+_data = {
+&"hit_flash": SubResource("EnemyHitFlashAnimation")
+}
+
+[node name="Slime" type="CharacterBody2D" unique_id=743997475]
+z_index = 4
+collision_layer = 2
+script = ExtResource("1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=257391345]
+modulate = Color(1, 0.4, 0.32, 1)
+position = Vector2(0, -11)
+sprite_frames = ExtResource("2")
+animation = &"slime_green"
+autoplay = "slime_green"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=402510078]
+position = Vector2(0, -3.5)
+shape = SubResource("Shape")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1941456790]
+libraries/ = SubResource("EnemyAnimationLibrary")

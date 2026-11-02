@@ -1,0 +1,327 @@
+[gd_scene load_steps=10 format=3]
+
+[ext_resource type="Script" path="res://scripts/game_over_panel.gd" id="1_script"]
+[ext_resource type="FontFile" path="res://assests/fonts/PixelOperator8-Bold.ttf" id="2_font"]
+[ext_resource type="Texture2D" path="res://assests/ui/touch_button_plate.png" id="3_plate"]
+[ext_resource type="Texture2D" path="res://assests/sprites/coin.png" id="4_coin"]
+
+[sub_resource type="AtlasTexture" id="CoinIcon"]
+atlas = ExtResource("4_coin")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="StyleBoxFlat" id="PanelStone"]
+bg_color = Color(0.025, 0.043, 0.072, 0.99)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.31, 0.53, 0.66, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+content_margin_left = 26.0
+content_margin_top = 22.0
+content_margin_right = 26.0
+content_margin_bottom = 18.0
+
+[sub_resource type="StyleBoxFlat" id="StatStone"]
+bg_color = Color(0.045, 0.071, 0.103, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.20, 0.35, 0.45, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+content_margin_left = 8.0
+content_margin_top = 7.0
+content_margin_right = 8.0
+content_margin_bottom = 7.0
+
+[sub_resource type="StyleBoxFlat" id="SoundButtonStone"]
+bg_color = Color(0.045, 0.071, 0.103, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.26, 0.44, 0.55, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="HomeButtonStone"]
+bg_color = Color(0.045, 0.071, 0.103, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.26, 0.44, 0.55, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[node name="GameOverPanel" type="Control"]
+process_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 0
+z_index = 100
+script = ExtResource("1_script")
+
+[node name="Veil" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 0
+color = Color(0.012, 0.023, 0.046, 0.72)
+
+[node name="Panel" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -310.0
+offset_top = -230.0
+offset_right = 310.0
+offset_bottom = 230.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("PanelStone")
+
+[node name="Content" type="VBoxContainer" parent="Panel"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Brand" type="Label" parent="Panel/Content"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.52, 0.76, 0.86, 1)
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 13
+text = "SURVIVAL SPACE  /  RUN RECORD"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Title" type="Label" parent="Panel/Content"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.84, 0.36, 1)
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 30
+text = "TRY AGAIN"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Description" type="Label" parent="Panel/Content"]
+custom_minimum_size = Vector2(0, 38)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.83, 0.9, 0.96, 1)
+theme_override_font_sizes/font_size = 16
+text = "Your hull is lost. Launch again and beat your best survival score."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Rule" type="ColorRect" parent="Panel/Content"]
+custom_minimum_size = Vector2(0, 2)
+layout_mode = 2
+color = Color(0.24, 0.43, 0.54, 0.9)
+
+[node name="RunStats" type="HBoxContainer" parent="Panel/Content"]
+custom_minimum_size = Vector2(0, 72)
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="WaveCard" type="PanelContainer" parent="Panel/Content/RunStats"]
+custom_minimum_size = Vector2(130, 72)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StatStone")
+
+[node name="WaveInfo" type="VBoxContainer" parent="Panel/Content/RunStats/WaveCard"]
+layout_mode = 2
+theme_override_constants/separation = 3
+
+[node name="WaveHeading" type="Label" parent="Panel/Content/RunStats/WaveCard/WaveInfo"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.55, 0.73, 0.83, 1)
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 11
+text = "WAVE"
+horizontal_alignment = 1
+
+[node name="WaveValue" type="Label" parent="Panel/Content/RunStats/WaveCard/WaveInfo"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.95, 0.88, 0.62, 1)
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 16
+text = "01"
+horizontal_alignment = 1
+
+[node name="TreasureCard" type="PanelContainer" parent="Panel/Content/RunStats"]
+custom_minimum_size = Vector2(130, 72)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StatStone")
+
+[node name="TreasureInfo" type="VBoxContainer" parent="Panel/Content/RunStats/TreasureCard"]
+layout_mode = 2
+theme_override_constants/separation = 3
+
+[node name="TreasureHeading" type="Label" parent="Panel/Content/RunStats/TreasureCard/TreasureInfo"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.55, 0.73, 0.83, 1)
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 11
+text = "SCORE"
+horizontal_alignment = 1
+
+[node name="TreasureRow" type="HBoxContainer" parent="Panel/Content/RunStats/TreasureCard/TreasureInfo"]
+layout_mode = 2
+alignment = 1
+theme_override_constants/separation = 5
+
+[node name="CoinIcon" type="TextureRect" parent="Panel/Content/RunStats/TreasureCard/TreasureInfo/TreasureRow"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+texture = SubResource("CoinIcon")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TreasureValue" type="Label" parent="Panel/Content/RunStats/TreasureCard/TreasureInfo/TreasureRow"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.84, 0.36, 1)
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 16
+text = "000"
+
+[node name="LevelCard" type="PanelContainer" parent="Panel/Content/RunStats"]
+custom_minimum_size = Vector2(130, 72)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StatStone")
+
+[node name="LevelInfo" type="VBoxContainer" parent="Panel/Content/RunStats/LevelCard"]
+layout_mode = 2
+theme_override_constants/separation = 3
+
+[node name="LevelHeading" type="Label" parent="Panel/Content/RunStats/LevelCard/LevelInfo"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.55, 0.73, 0.83, 1)
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 11
+text = "LEVEL"
+horizontal_alignment = 1
+
+[node name="LevelValue" type="Label" parent="Panel/Content/RunStats/LevelCard/LevelInfo"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.95, 0.88, 0.62, 1)
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 16
+text = "01"
+horizontal_alignment = 1
+
+[node name="EnemyCard" type="PanelContainer" parent="Panel/Content/RunStats"]
+custom_minimum_size = Vector2(130, 72)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StatStone")
+
+[node name="EnemyInfo" type="VBoxContainer" parent="Panel/Content/RunStats/EnemyCard"]
+layout_mode = 2
+theme_override_constants/separation = 3
+
+[node name="EnemyHeading" type="Label" parent="Panel/Content/RunStats/EnemyCard/EnemyInfo"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.55, 0.73, 0.83, 1)
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 11
+text = "KILLS"
+horizontal_alignment = 1
+
+[node name="EnemyValue" type="Label" parent="Panel/Content/RunStats/EnemyCard/EnemyInfo"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.88, 0.91, 0.97, 1)
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 16
+text = "00"
+horizontal_alignment = 1
+
+[node name="ProfileReward" type="Label" parent="Panel/Content"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.40, 0.88, 0.79, 1)
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 13
+text = "CAREER XP EARNED  +20"
+horizontal_alignment = 1
+
+[node name="Actions" type="HBoxContainer" parent="Panel/Content"]
+custom_minimum_size = Vector2(0, 112)
+layout_mode = 2
+alignment = 1
+theme_override_constants/separation = 12
+
+[node name="Retry" type="TextureButton" parent="Panel/Content/Actions"]
+custom_minimum_size = Vector2(112, 112)
+layout_mode = 2
+focus_mode = 2
+texture_normal = ExtResource("3_plate")
+texture_hover = ExtResource("3_plate")
+texture_pressed = ExtResource("3_plate")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="RetryText" type="Label" parent="Panel/Content/Actions/Retry"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(1, 0.86, 0.48, 1)
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 13
+text = "TRY\nAGAIN"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SoundButton" type="Button" parent="Panel/Content/Actions"]
+custom_minimum_size = Vector2(132, 48)
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/font_color = Color(0.75, 0.88, 0.96, 1)
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("SoundButtonStone")
+theme_override_styles/hover = SubResource("SoundButtonStone")
+theme_override_styles/pressed = SubResource("SoundButtonStone")
+text = "SOUND  ON"
+
+[node name="Home" type="Button" parent="Panel/Content/Actions"]
+custom_minimum_size = Vector2(132, 48)
+layout_mode = 2
+focus_mode = 2
+theme_override_colors/font_color = Color(0.75, 0.88, 0.96, 1)
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 11
+theme_override_styles/normal = SubResource("HomeButtonStone")
+theme_override_styles/hover = SubResource("HomeButtonStone")
+theme_override_styles/pressed = SubResource("HomeButtonStone")
+text = "HOME"
+
+[node name="Hint" type="Label" parent="Panel/Content"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.5, 0.65, 0.75, 1)
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 10
+text = "TAP THE STONE TO LAUNCH ANOTHER RUN"
+horizontal_alignment = 1
+vertical_alignment = 1

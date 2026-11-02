@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/movement_effect.gd" id="1_script"]
+[ext_resource type="SpriteFrames" path="res://assests/sprites/player_movement_fx_frames.tres" id="2_frames"]
+
+[node name="MovementEffect" type="Node2D"]
+z_index = 4
+script = ExtResource("1_script")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+modulate = Color(1, 1, 1, 0.82)
+scale = Vector2(0.055, 0.055)
+sprite_frames = ExtResource("2_frames")

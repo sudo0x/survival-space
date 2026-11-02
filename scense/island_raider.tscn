@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scripts/island_raider.gd" id="1_raider"]
+[ext_resource type="SpriteFrames" path="res://assests/sprites/island_raider_frames.tres" id="2_frames"]
+
+[sub_resource type="CapsuleShape2D" id="RaiderBody"]
+radius = 5.5
+height = 20.0
+
+[node name="IslandRaider" type="CharacterBody2D"]
+z_index = 4
+collision_layer = 2
+collision_mask = 1
+script = ExtResource("1_raider")
+speed = 42.0
+patrol_distance = 72.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -16)
+scale = Vector2(0.045, 0.045)
+sprite_frames = ExtResource("2_frames")
+animation = &"walk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -10)
+shape = SubResource("RaiderBody")
+
+[node name="FloorProbe" type="RayCast2D" parent="."]
+position = Vector2(0, -1)
+enabled = true
+collision_mask = 1
+target_position = Vector2(-16, 24)
+
+[node name="AttackArc" type="Polygon2D" parent="."]
+visible = false
+z_index = 1
+polygon = PackedVector2Array(0, -8, 13, -14, 25, -8, 29, 0, 25, 8, 13, 14, 0, 8)
+color = Color(0.22, 0.86, 1, 0.82)

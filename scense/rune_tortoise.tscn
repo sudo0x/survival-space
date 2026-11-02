@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://bomi7821j6sf8"]
+
+[ext_resource type="Script" uid="uid://dxg1r8vxqsv2o" path="res://scripts/rune_tortoise.gd" id="1_tortoise"]
+[ext_resource type="SpriteFrames" uid="uid://byrma052an4h3" path="res://assests/sprites/rune_tortoise_frames.tres" id="2_frames"]
+
+[sub_resource type="CapsuleShape2D" id="TortoiseBody"]
+height = 20.0
+
+[node name="RuneTortoise" type="CharacterBody2D" unique_id=1415949208]
+z_index = 4
+collision_layer = 2
+script = ExtResource("1_tortoise")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1508086629]
+position = Vector2(0, -16)
+scale = Vector2(0.064, 0.064)
+sprite_frames = ExtResource("2_frames")
+animation = &"walk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1884946765]
+position = Vector2(0, -15)
+shape = SubResource("TortoiseBody")
+
+[node name="FloorProbe" type="RayCast2D" parent="." unique_id=1043957634]
+position = Vector2(0, -1)
+target_position = Vector2(-16, 24)

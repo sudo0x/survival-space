@@ -1,0 +1,177 @@
+[gd_scene format=3 uid="uid://ds1vtsf2nt4we"]
+
+[ext_resource type="Script" uid="uid://b3alcgc1dwc3t" path="res://scripts/touch_controls.gd" id="1"]
+[ext_resource type="FontFile" uid="uid://bu2nfnc1s7tm3" path="res://assests/fonts/PixelOperator8-Bold.ttf" id="2"]
+[ext_resource type="Texture2D" uid="uid://bcqmiq5nyjb35" path="res://assests/ui/touch_button_plate.png" id="3"]
+[ext_resource type="Script" path="res://scripts/touch_joystick.gd" id="4_joystick"]
+
+[sub_resource type="StyleBoxTexture" id="TouchNormal"]
+texture = ExtResource("3")
+
+[sub_resource type="StyleBoxTexture" id="TouchPressed"]
+texture = ExtResource("3")
+modulate_color = Color(0.78, 0.94, 1, 1)
+
+[sub_resource type="StyleBoxTexture" id="TouchHover"]
+texture = ExtResource("3")
+modulate_color = Color(1.12, 1.18, 1.2, 1)
+
+[node name="TouchControls" type="Control" unique_id=1511069444]
+z_index = 20
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1")
+
+[node name="MoveJoystick" type="Control" parent="." unique_id=109861027]
+custom_minimum_size = Vector2(108, 108)
+layout_mode = 1
+mouse_filter = 2
+script = ExtResource("4_joystick")
+
+[node name="Base" type="TextureRect" parent="MoveJoystick"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+texture = ExtResource("3")
+expand_mode = 1
+stretch_mode = 5
+modulate = Color(0.78, 0.9, 1, 0.52)
+
+[node name="Knob" type="TextureRect" parent="MoveJoystick"]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 29.0
+offset_right = 79.0
+offset_bottom = 79.0
+mouse_filter = 2
+texture = ExtResource("3")
+expand_mode = 1
+stretch_mode = 5
+modulate = Color(0.88, 0.98, 1, 0.9)
+[node name="Dash" type="Button" parent="." unique_id=1215809685]
+custom_minimum_size = Vector2(92, 92)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.8958
+anchor_top = 0.6574
+anchor_right = 0.9757
+anchor_bottom = 0.7994
+offset_left = 16.038452
+offset_top = -34.99521
+offset_right = 16.038452
+offset_bottom = -34.99521
+focus_mode = 0
+theme_override_colors/font_color = Color(1, 0.93, 0.7, 1)
+theme_override_fonts/font = ExtResource("2")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("TouchNormal")
+theme_override_styles/pressed = SubResource("TouchPressed")
+theme_override_styles/hover = SubResource("TouchHover")
+text = "DASH"
+
+[node name="Magic" type="Button" parent="." unique_id=141462087]
+custom_minimum_size = Vector2(92, 92)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.804
+anchor_top = 0.6574
+anchor_right = 0.884
+anchor_bottom = 0.7994
+offset_left = 17.791992
+offset_top = 12.004791
+offset_right = 17.791931
+offset_bottom = 12.004822
+focus_mode = 0
+theme_override_colors/font_color = Color(0.8, 0.96, 1, 1)
+theme_override_fonts/font = ExtResource("2")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("TouchNormal")
+theme_override_styles/pressed = SubResource("TouchPressed")
+theme_override_styles/hover = SubResource("TouchHover")
+text = "MAGIC"
+
+[node name="Hit" type="Button" parent="." unique_id=1078131761]
+custom_minimum_size = Vector2(92, 92)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.804
+anchor_top = 0.821
+anchor_right = 0.884
+anchor_bottom = 0.963
+offset_left = -29.208008
+offset_top = 7.9920044
+offset_right = -29.208008
+offset_bottom = 7.9920044
+focus_mode = 0
+theme_override_colors/font_color = Color(1, 0.86, 0.58, 1)
+theme_override_fonts/font = ExtResource("2")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("TouchNormal")
+theme_override_styles/pressed = SubResource("TouchPressed")
+theme_override_styles/hover = SubResource("TouchHover")
+text = "HIT"
+
+[node name="Jump" type="Button" parent="." unique_id=891378671]
+custom_minimum_size = Vector2(92, 92)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.8958
+anchor_top = 0.821
+anchor_right = 0.9757
+anchor_bottom = 0.963
+offset_left = -1.9615479
+offset_top = -2.0079956
+offset_right = -1.9615479
+offset_bottom = -2.0079956
+focus_mode = 0
+theme_override_colors/font_color = Color(0.8, 1, 0.72, 1)
+theme_override_fonts/font = ExtResource("2")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("TouchNormal")
+theme_override_styles/pressed = SubResource("TouchPressed")
+theme_override_styles/hover = SubResource("TouchHover")
+text = "JUMP"
+
+[node name="Pause" type="Button" parent="." unique_id=1706364012]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.893
+anchor_top = 0.2654
+anchor_right = 0.9624
+anchor_bottom = 0.3889
+focus_mode = 0
+theme_override_colors/font_color = Color(0.76, 0.91, 1, 1)
+theme_override_fonts/font = ExtResource("2")
+theme_override_font_sizes/font_size = 13
+theme_override_styles/normal = SubResource("TouchNormal")
+theme_override_styles/pressed = SubResource("TouchPressed")
+theme_override_styles/hover = SubResource("TouchHover")
+text = "PAUSE"
+
+[node name="Anchor" type="Button" parent="."]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.893
+anchor_top = 0.43
+anchor_right = 0.9624
+anchor_bottom = 0.5535
+focus_mode = 0
+theme_override_colors/font_color = Color(0.58, 0.94, 1, 1)
+theme_override_fonts/font = ExtResource("2")
+theme_override_font_sizes/font_size = 13
+theme_override_styles/normal = SubResource("TouchNormal")
+theme_override_styles/pressed = SubResource("TouchPressed")
+theme_override_styles/hover = SubResource("TouchHover")
+text = "RIFT"
+
+
+

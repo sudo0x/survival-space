@@ -1,0 +1,155 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://08ks77lotyy6"]
+
+[ext_resource type="Texture2D" uid="uid://c8psfqw3vusjf" path="res://assests/sprites/player_movement_fx_sheet_wind_pixel.png" id="1_sheet"]
+
+[sub_resource type="AtlasTexture" id="double_0"]
+atlas = ExtResource("1_sheet")
+region = Rect2(0, 275, 357.5, 275)
+
+[sub_resource type="AtlasTexture" id="double_1"]
+atlas = ExtResource("1_sheet")
+region = Rect2(357.5, 275, 357.5, 275)
+
+[sub_resource type="AtlasTexture" id="double_2"]
+atlas = ExtResource("1_sheet")
+region = Rect2(715, 275, 357.5, 275)
+
+[sub_resource type="AtlasTexture" id="double_3"]
+atlas = ExtResource("1_sheet")
+region = Rect2(1072.5, 275, 357.5, 275)
+
+[sub_resource type="AtlasTexture" id="fall_0"]
+atlas = ExtResource("1_sheet")
+region = Rect2(0, 550, 357.5, 275)
+
+[sub_resource type="AtlasTexture" id="fall_1"]
+atlas = ExtResource("1_sheet")
+region = Rect2(357.5, 550, 357.5, 275)
+
+[sub_resource type="AtlasTexture" id="fall_2"]
+atlas = ExtResource("1_sheet")
+region = Rect2(715, 550, 357.5, 275)
+
+[sub_resource type="AtlasTexture" id="fall_3"]
+atlas = ExtResource("1_sheet")
+region = Rect2(1072.5, 550, 357.5, 275)
+
+[sub_resource type="AtlasTexture" id="jump_0"]
+atlas = ExtResource("1_sheet")
+region = Rect2(0, 0, 357.5, 275)
+
+[sub_resource type="AtlasTexture" id="jump_1"]
+atlas = ExtResource("1_sheet")
+region = Rect2(357.5, 0, 357.5, 275)
+
+[sub_resource type="AtlasTexture" id="jump_2"]
+atlas = ExtResource("1_sheet")
+region = Rect2(715, 0, 357.5, 275)
+
+[sub_resource type="AtlasTexture" id="jump_3"]
+atlas = ExtResource("1_sheet")
+region = Rect2(1072.5, 0, 357.5, 275)
+
+[sub_resource type="AtlasTexture" id="land_0"]
+atlas = ExtResource("1_sheet")
+region = Rect2(0, 825, 357.5, 275)
+
+[sub_resource type="AtlasTexture" id="land_1"]
+atlas = ExtResource("1_sheet")
+region = Rect2(357.5, 825, 357.5, 275)
+
+[sub_resource type="AtlasTexture" id="land_2"]
+atlas = ExtResource("1_sheet")
+region = Rect2(715, 825, 357.5, 275)
+
+[sub_resource type="AtlasTexture" id="land_3"]
+atlas = ExtResource("1_sheet")
+region = Rect2(1072.5, 825, 357.5, 275)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("double_0")
+}, {
+"duration": 1.0,
+"texture": SubResource("double_1")
+}, {
+"duration": 1.0,
+"texture": SubResource("double_2")
+}, {
+"duration": 1.0,
+"texture": SubResource("double_3")
+}],
+"loop": 0,
+"name": &"double_jump",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("fall_0")
+}, {
+"duration": 1.0,
+"texture": SubResource("fall_1")
+}, {
+"duration": 1.0,
+"texture": SubResource("fall_2")
+}, {
+"duration": 1.0,
+"texture": SubResource("fall_3")
+}],
+"loop": 0,
+"name": &"fall",
+"speed": 14.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("jump_0")
+}, {
+"duration": 1.0,
+"texture": SubResource("jump_1")
+}, {
+"duration": 1.0,
+"texture": SubResource("jump_2")
+}, {
+"duration": 1.0,
+"texture": SubResource("jump_3")
+}],
+"loop": 0,
+"name": &"jump",
+"speed": 14.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("land_0")
+}, {
+"duration": 1.0,
+"texture": SubResource("land_1")
+}, {
+"duration": 1.0,
+"texture": SubResource("land_2")
+}, {
+"duration": 1.0,
+"texture": SubResource("land_3")
+}],
+"loop": 0,
+"name": &"land",
+"speed": 14.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("land_0")
+}, {
+"duration": 1.0,
+"texture": SubResource("land_1")
+}, {
+"duration": 1.0,
+"texture": SubResource("land_2")
+}, {
+"duration": 1.0,
+"texture": SubResource("land_3")
+}],
+"loop": 0,
+"name": &"dash_wind",
+"speed": 18.0
+}]

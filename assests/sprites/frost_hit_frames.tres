@@ -1,0 +1,33 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://gpn6cdacojqr"]
+
+[sub_resource type="AtlasTexture" id="Hit0"]
+region = Rect2(0, 0, 543, 724)
+
+[sub_resource type="AtlasTexture" id="Hit1"]
+region = Rect2(543, 0, 543, 724)
+
+[sub_resource type="AtlasTexture" id="Hit2"]
+region = Rect2(1086, 0, 543, 724)
+
+[sub_resource type="AtlasTexture" id="Hit3"]
+region = Rect2(1629, 0, 543, 724)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("Hit0")
+}, {
+"duration": 1.0,
+"texture": SubResource("Hit1")
+}, {
+"duration": 1.0,
+"texture": SubResource("Hit2")
+}, {
+"duration": 1.0,
+"texture": SubResource("Hit3")
+}],
+"loop": 0,
+"name": &"impact",
+"speed": 12.0
+}]

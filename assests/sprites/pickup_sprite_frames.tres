@@ -1,0 +1,108 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://blv04i0w2hc65"]
+
+[ext_resource type="Texture2D" uid="uid://bbulnbhjlrfur" path="res://assests/sprites/coin.png" id="coin"]
+[ext_resource type="Texture2D" uid="uid://ws1jvwlekxyp" path="res://assests/sprites/fruit.png" id="fruit"]
+
+[sub_resource type="AtlasTexture" id="coin_0"]
+atlas = ExtResource("coin")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="coin_1"]
+atlas = ExtResource("coin")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="coin_2"]
+atlas = ExtResource("coin")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="coin_3"]
+atlas = ExtResource("coin")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="coin_4"]
+atlas = ExtResource("coin")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="coin_5"]
+atlas = ExtResource("coin")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="coin_6"]
+atlas = ExtResource("coin")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="coin_7"]
+atlas = ExtResource("coin")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="coin_8"]
+atlas = ExtResource("coin")
+region = Rect2(128, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="coin_9"]
+atlas = ExtResource("coin")
+region = Rect2(144, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="coin_10"]
+atlas = ExtResource("coin")
+region = Rect2(160, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="coin_11"]
+atlas = ExtResource("coin")
+region = Rect2(176, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="fruit_0"]
+atlas = ExtResource("fruit")
+region = Rect2(0, 0, 16, 16)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("coin_0")
+}, {
+"duration": 1.0,
+"texture": SubResource("coin_1")
+}, {
+"duration": 1.0,
+"texture": SubResource("coin_2")
+}, {
+"duration": 1.0,
+"texture": SubResource("coin_3")
+}, {
+"duration": 1.0,
+"texture": SubResource("coin_4")
+}, {
+"duration": 1.0,
+"texture": SubResource("coin_5")
+}, {
+"duration": 1.0,
+"texture": SubResource("coin_6")
+}, {
+"duration": 1.0,
+"texture": SubResource("coin_7")
+}, {
+"duration": 1.0,
+"texture": SubResource("coin_8")
+}, {
+"duration": 1.0,
+"texture": SubResource("coin_9")
+}, {
+"duration": 1.0,
+"texture": SubResource("coin_10")
+}, {
+"duration": 1.0,
+"texture": SubResource("coin_11")
+}],
+"loop": 1,
+"name": &"coin",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("fruit_0")
+}],
+"loop": 1,
+"name": &"fruit",
+"speed": 1.0
+}]

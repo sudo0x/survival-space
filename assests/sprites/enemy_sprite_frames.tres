@@ -1,0 +1,175 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://byb53ujlbu8d8"]
+
+[ext_resource type="Texture2D" uid="uid://dthqprr4ny1nq" path="res://assests/sprites/bat.png" id="bat"]
+[ext_resource type="Texture2D" uid="uid://dlp0vgsni5pk7" path="res://assests/sprites/beetle.png" id="beetle"]
+[ext_resource type="Texture2D" uid="uid://b5f2e6xqjyiv6" path="res://assests/sprites/slime_green.png" id="green"]
+[ext_resource type="Texture2D" uid="uid://djkye2og4htkt" path="res://assests/sprites/slime_purple.png" id="purple"]
+[ext_resource type="Texture2D" uid="uid://qd63uib504tl" path="res://assests/sprites/ember_wisp.png" id="wisp"]
+
+[sub_resource type="AtlasTexture" id="bat_0"]
+atlas = ExtResource("bat")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="bat_1"]
+atlas = ExtResource("bat")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="bat_2"]
+atlas = ExtResource("bat")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="bat_3"]
+atlas = ExtResource("bat")
+region = Rect2(72, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="beetle_0"]
+atlas = ExtResource("beetle")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="beetle_1"]
+atlas = ExtResource("beetle")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="beetle_2"]
+atlas = ExtResource("beetle")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="beetle_3"]
+atlas = ExtResource("beetle")
+region = Rect2(72, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="wisp_0"]
+atlas = ExtResource("wisp")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="wisp_1"]
+atlas = ExtResource("wisp")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="wisp_2"]
+atlas = ExtResource("wisp")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="wisp_3"]
+atlas = ExtResource("wisp")
+region = Rect2(72, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="green_0"]
+atlas = ExtResource("green")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="green_1"]
+atlas = ExtResource("green")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="green_2"]
+atlas = ExtResource("green")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="green_3"]
+atlas = ExtResource("green")
+region = Rect2(72, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="purple_0"]
+atlas = ExtResource("purple")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="purple_1"]
+atlas = ExtResource("purple")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="purple_2"]
+atlas = ExtResource("purple")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="purple_3"]
+atlas = ExtResource("purple")
+region = Rect2(72, 0, 24, 24)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("bat_0")
+}, {
+"duration": 1.0,
+"texture": SubResource("bat_1")
+}, {
+"duration": 1.0,
+"texture": SubResource("bat_2")
+}, {
+"duration": 1.0,
+"texture": SubResource("bat_3")
+}],
+"loop": 1,
+"name": &"bat",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("beetle_0")
+}, {
+"duration": 1.0,
+"texture": SubResource("beetle_1")
+}, {
+"duration": 1.0,
+"texture": SubResource("beetle_2")
+}, {
+"duration": 1.0,
+"texture": SubResource("beetle_3")
+}],
+"loop": 1,
+"name": &"beetle",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("wisp_0")
+}, {
+"duration": 1.0,
+"texture": SubResource("wisp_1")
+}, {
+"duration": 1.0,
+"texture": SubResource("wisp_2")
+}, {
+"duration": 1.0,
+"texture": SubResource("wisp_3")
+}],
+"loop": 1,
+"name": &"ember_wisp",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("green_0")
+}, {
+"duration": 1.0,
+"texture": SubResource("green_1")
+}, {
+"duration": 1.0,
+"texture": SubResource("green_2")
+}, {
+"duration": 1.0,
+"texture": SubResource("green_3")
+}],
+"loop": 1,
+"name": &"slime_green",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("purple_0")
+}, {
+"duration": 1.0,
+"texture": SubResource("purple_1")
+}, {
+"duration": 1.0,
+"texture": SubResource("purple_2")
+}, {
+"duration": 1.0,
+"texture": SubResource("purple_3")
+}],
+"loop": 1,
+"name": &"slime_purple",
+"speed": 8.0
+}]

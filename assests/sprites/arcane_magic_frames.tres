@@ -1,0 +1,72 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://bekp5xnbtivcr"]
+
+[ext_resource type="Texture2D" uid="uid://ddyt7mov8dyhk" path="res://assests/sprites/arcane_orb_sheet_player_choice.png" id="1_sheet"]
+
+[sub_resource type="AtlasTexture" id="bolt_0"]
+atlas = ExtResource("1_sheet")
+region = Rect2(0, 0, 443.5, 443.5)
+
+[sub_resource type="AtlasTexture" id="bolt_1"]
+atlas = ExtResource("1_sheet")
+region = Rect2(443.5, 0, 443.5, 443.5)
+
+[sub_resource type="AtlasTexture" id="bolt_2"]
+atlas = ExtResource("1_sheet")
+region = Rect2(887, 0, 443.5, 443.5)
+
+[sub_resource type="AtlasTexture" id="bolt_3"]
+atlas = ExtResource("1_sheet")
+region = Rect2(1330.5, 0, 443.5, 443.5)
+
+[sub_resource type="AtlasTexture" id="impact_0"]
+atlas = ExtResource("1_sheet")
+region = Rect2(0, 443.5, 443.5, 443.5)
+
+[sub_resource type="AtlasTexture" id="impact_1"]
+atlas = ExtResource("1_sheet")
+region = Rect2(443.5, 443.5, 443.5, 443.5)
+
+[sub_resource type="AtlasTexture" id="impact_2"]
+atlas = ExtResource("1_sheet")
+region = Rect2(887, 443.5, 443.5, 443.5)
+
+[sub_resource type="AtlasTexture" id="impact_3"]
+atlas = ExtResource("1_sheet")
+region = Rect2(1330.5, 443.5, 443.5, 443.5)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("bolt_0")
+}, {
+"duration": 1.0,
+"texture": SubResource("bolt_1")
+}, {
+"duration": 1.0,
+"texture": SubResource("bolt_2")
+}, {
+"duration": 1.0,
+"texture": SubResource("bolt_3")
+}],
+"loop": 1,
+"name": &"flight",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("impact_0")
+}, {
+"duration": 1.0,
+"texture": SubResource("impact_1")
+}, {
+"duration": 1.0,
+"texture": SubResource("impact_2")
+}, {
+"duration": 1.0,
+"texture": SubResource("impact_3")
+}],
+"loop": 0,
+"name": &"impact",
+"speed": 18.0
+}]

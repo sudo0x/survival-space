@@ -1,0 +1,105 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://dv24gu8w3va7v"]
+
+[ext_resource type="Texture2D" uid="uid://c4odjkdqdy5fl" path="res://assests/sprites/combat_effects.png" id="1_sheet"]
+
+[sub_resource type="AtlasTexture" id="armor_0"]
+atlas = ExtResource("1_sheet")
+region = Rect2(0, 608, 323.5, 304)
+
+[sub_resource type="AtlasTexture" id="armor_1"]
+atlas = ExtResource("1_sheet")
+region = Rect2(323.5, 608, 323.5, 304)
+
+[sub_resource type="AtlasTexture" id="armor_2"]
+atlas = ExtResource("1_sheet")
+region = Rect2(647, 608, 323.5, 304)
+
+[sub_resource type="AtlasTexture" id="armor_3"]
+atlas = ExtResource("1_sheet")
+region = Rect2(970.5, 608, 323.5, 304)
+
+[sub_resource type="AtlasTexture" id="impact_0"]
+atlas = ExtResource("1_sheet")
+region = Rect2(0, 304, 323.5, 304)
+
+[sub_resource type="AtlasTexture" id="impact_1"]
+atlas = ExtResource("1_sheet")
+region = Rect2(323.5, 304, 323.5, 304)
+
+[sub_resource type="AtlasTexture" id="impact_2"]
+atlas = ExtResource("1_sheet")
+region = Rect2(647, 304, 323.5, 304)
+
+[sub_resource type="AtlasTexture" id="impact_3"]
+atlas = ExtResource("1_sheet")
+region = Rect2(970.5, 304, 323.5, 304)
+
+[sub_resource type="AtlasTexture" id="slash_0"]
+atlas = ExtResource("1_sheet")
+region = Rect2(0, 0, 323.5, 304)
+
+[sub_resource type="AtlasTexture" id="slash_1"]
+atlas = ExtResource("1_sheet")
+region = Rect2(323.5, 0, 323.5, 304)
+
+[sub_resource type="AtlasTexture" id="slash_2"]
+atlas = ExtResource("1_sheet")
+region = Rect2(647, 0, 323.5, 304)
+
+[sub_resource type="AtlasTexture" id="slash_3"]
+atlas = ExtResource("1_sheet")
+region = Rect2(970.5, 0, 323.5, 304)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("armor_0")
+}, {
+"duration": 1.0,
+"texture": SubResource("armor_1")
+}, {
+"duration": 1.0,
+"texture": SubResource("armor_2")
+}, {
+"duration": 1.0,
+"texture": SubResource("armor_3")
+}],
+"loop": 0,
+"name": &"armor_hit",
+"speed": 18.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("impact_0")
+}, {
+"duration": 1.0,
+"texture": SubResource("impact_1")
+}, {
+"duration": 1.0,
+"texture": SubResource("impact_2")
+}, {
+"duration": 1.0,
+"texture": SubResource("impact_3")
+}],
+"loop": 0,
+"name": &"impact",
+"speed": 18.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("slash_0")
+}, {
+"duration": 1.0,
+"texture": SubResource("slash_1")
+}, {
+"duration": 1.0,
+"texture": SubResource("slash_2")
+}, {
+"duration": 1.0,
+"texture": SubResource("slash_3")
+}],
+"loop": 0,
+"name": &"slash",
+"speed": 18.0
+}]

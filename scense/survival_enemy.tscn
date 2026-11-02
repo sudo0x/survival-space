@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://scripts/survival_enemy.gd" id="1_script"]
+[ext_resource type="SpriteFrames" path="res://assests/sprites/survival_enemy_frames.tres" id="2_frames"]
+[ext_resource type="PackedScene" path="res://scense/enemy_projectile.tscn" id="3_shot"]
+
+[sub_resource type="RectangleShape2D" id="EnemyBody"]
+size = Vector2(25, 23)
+
+[node name="SurvivalEnemy" type="CharacterBody2D"]
+z_index = 4
+collision_layer = 2
+collision_mask = 1
+script = ExtResource("1_script")
+projectile_scene = ExtResource("3_shot")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, -24)
+scale = Vector2(0.5, 0.5)
+sprite_frames = ExtResource("2_frames")
+animation = &"rift_moth_fly"
+autoplay = "rift_moth_fly"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -12)
+shape = SubResource("EnemyBody")

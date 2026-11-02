@@ -1,0 +1,149 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://dp46ykxdfs736"]
+
+[ext_resource type="Texture2D" uid="uid://dlbt2lufpwcj8" path="res://assests/sprites/star_hunter_sheet.png" id="1_sheet"]
+
+[sub_resource type="AtlasTexture" id="attack_0"]
+atlas = ExtResource("1_sheet")
+region = Rect2(0, 512, 384, 256)
+
+[sub_resource type="AtlasTexture" id="attack_1"]
+atlas = ExtResource("1_sheet")
+region = Rect2(384, 512, 384, 256)
+
+[sub_resource type="AtlasTexture" id="attack_2"]
+atlas = ExtResource("1_sheet")
+region = Rect2(768, 512, 384, 256)
+
+[sub_resource type="AtlasTexture" id="attack_3"]
+atlas = ExtResource("1_sheet")
+region = Rect2(1152, 512, 384, 256)
+
+[sub_resource type="AtlasTexture" id="dash_0"]
+atlas = ExtResource("1_sheet")
+region = Rect2(0, 256, 384, 256)
+
+[sub_resource type="AtlasTexture" id="dash_1"]
+atlas = ExtResource("1_sheet")
+region = Rect2(384, 256, 384, 256)
+
+[sub_resource type="AtlasTexture" id="dash_2"]
+atlas = ExtResource("1_sheet")
+region = Rect2(768, 256, 384, 256)
+
+[sub_resource type="AtlasTexture" id="dash_3"]
+atlas = ExtResource("1_sheet")
+region = Rect2(1152, 256, 384, 256)
+
+[sub_resource type="AtlasTexture" id="death_0"]
+atlas = ExtResource("1_sheet")
+region = Rect2(0, 768, 384, 256)
+
+[sub_resource type="AtlasTexture" id="death_1"]
+atlas = ExtResource("1_sheet")
+region = Rect2(384, 768, 384, 256)
+
+[sub_resource type="AtlasTexture" id="death_2"]
+atlas = ExtResource("1_sheet")
+region = Rect2(768, 768, 384, 256)
+
+[sub_resource type="AtlasTexture" id="death_3"]
+atlas = ExtResource("1_sheet")
+region = Rect2(1152, 768, 384, 256)
+
+[sub_resource type="AtlasTexture" id="hover_0"]
+atlas = ExtResource("1_sheet")
+region = Rect2(0, 0, 384, 256)
+
+[sub_resource type="AtlasTexture" id="hover_1"]
+atlas = ExtResource("1_sheet")
+region = Rect2(384, 0, 384, 256)
+
+[sub_resource type="AtlasTexture" id="hover_2"]
+atlas = ExtResource("1_sheet")
+region = Rect2(768, 0, 384, 256)
+
+[sub_resource type="AtlasTexture" id="hover_3"]
+atlas = ExtResource("1_sheet")
+region = Rect2(1152, 0, 384, 256)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("attack_0")
+}, {
+"duration": 1.0,
+"texture": SubResource("attack_1")
+}, {
+"duration": 1.0,
+"texture": SubResource("attack_2")
+}, {
+"duration": 1.0,
+"texture": SubResource("attack_3")
+}],
+"loop": 0,
+"name": &"attack",
+"speed": 14.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("dash_0")
+}, {
+"duration": 1.0,
+"texture": SubResource("dash_1")
+}, {
+"duration": 1.0,
+"texture": SubResource("dash_2")
+}, {
+"duration": 1.0,
+"texture": SubResource("dash_3")
+}],
+"loop": 1,
+"name": &"dash",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("death_0")
+}, {
+"duration": 1.0,
+"texture": SubResource("death_1")
+}, {
+"duration": 1.0,
+"texture": SubResource("death_2")
+}, {
+"duration": 1.0,
+"texture": SubResource("death_3")
+}],
+"loop": 0,
+"name": &"death",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("hover_0")
+}, {
+"duration": 1.0,
+"texture": SubResource("hover_1")
+}, {
+"duration": 1.0,
+"texture": SubResource("hover_2")
+}, {
+"duration": 1.0,
+"texture": SubResource("hover_3")
+}],
+"loop": 1,
+"name": &"fly",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("death_0")
+}, {
+"duration": 1.0,
+"texture": SubResource("death_1")
+}],
+"loop": 0,
+"name": &"hurt",
+"speed": 12.0
+}]

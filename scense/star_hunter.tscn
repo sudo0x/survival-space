@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scripts/star_hunter.gd" id="1_script"]
+[ext_resource type="SpriteFrames" path="res://assests/sprites/star_hunter_frames.tres" id="2_frames"]
+
+[sub_resource type="CircleShape2D" id="HunterBody"]
+radius = 6.5
+
+[node name="StarHunter" type="CharacterBody2D"]
+z_index = 4
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_script")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(0.052, 0.052)
+sprite_frames = ExtResource("2_frames")
+animation = &"fly"
+autoplay = "fly"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("HunterBody")

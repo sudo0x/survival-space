@@ -1,0 +1,39 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://byrma052an4h3"]
+
+[ext_resource type="Texture2D" uid="uid://bx71f5n84ky41" path="res://assests/sprites/rune_tortoise_concept.png" id="1_sheet"]
+
+[sub_resource type="AtlasTexture" id="Atlas_tortoise_0"]
+atlas = ExtResource("1_sheet")
+region = Rect2(0, 0, 543, 724)
+
+[sub_resource type="AtlasTexture" id="Atlas_tortoise_1"]
+atlas = ExtResource("1_sheet")
+region = Rect2(543, 0, 543, 724)
+
+[sub_resource type="AtlasTexture" id="Atlas_tortoise_2"]
+atlas = ExtResource("1_sheet")
+region = Rect2(1086, 0, 543, 724)
+
+[sub_resource type="AtlasTexture" id="Atlas_tortoise_3"]
+atlas = ExtResource("1_sheet")
+region = Rect2(1629, 0, 543, 724)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("Atlas_tortoise_0")
+}, {
+"duration": 1.0,
+"texture": SubResource("Atlas_tortoise_1")
+}, {
+"duration": 1.0,
+"texture": SubResource("Atlas_tortoise_2")
+}, {
+"duration": 1.0,
+"texture": SubResource("Atlas_tortoise_3")
+}],
+"loop": 1,
+"name": &"walk",
+"speed": 5.0
+}]

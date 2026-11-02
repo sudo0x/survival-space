@@ -1,0 +1,32 @@
+[gd_resource type="SpriteFrames" format=3]
+
+[ext_resource type="Texture2D" path="res://assests/sprites/frost_freeze_growth_sheet.png" id="1_sheet"]
+
+[sub_resource type="AtlasTexture" id="Frame0"]
+atlas = ExtResource("1_sheet")
+region = Rect2(0, 0, 531.5, 740)
+
+[sub_resource type="AtlasTexture" id="Frame1"]
+atlas = ExtResource("1_sheet")
+region = Rect2(531.5, 0, 531.5, 740)
+
+[sub_resource type="AtlasTexture" id="Frame2"]
+atlas = ExtResource("1_sheet")
+region = Rect2(1063, 0, 531.5, 740)
+
+[sub_resource type="AtlasTexture" id="Frame3"]
+atlas = ExtResource("1_sheet")
+region = Rect2(1594.5, 0, 531.5, 740)
+
+[resource]
+animations = [{
+"frames": [{"duration": 1.0, "texture": SubResource("Frame0")}, {"duration": 1.0, "texture": SubResource("Frame1")}, {"duration": 1.0, "texture": SubResource("Frame2")}, {"duration": 1.0, "texture": SubResource("Frame3")}],
+"loop": 0,
+"name": &"freeze_shell",
+"speed": 10.0
+}, {
+"frames": [{"duration": 1.0, "texture": SubResource("Frame2")}, {"duration": 1.0, "texture": SubResource("Frame3")}],
+"loop": 1,
+"name": &"frozen_idle",
+"speed": 4.0
+}]

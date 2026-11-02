@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://scripts/wind_slash.gd" id="1_script"]
+[ext_resource type="SpriteFrames" path="res://assests/sprites/wind_slash_frames.tres" id="2_frames"]
+[ext_resource type="AudioStream" path="res://assests/sounds/wind_slash_chip.wav" id="3_wind_sound"]
+
+[sub_resource type="RectangleShape2D" id="WindSlashShape"]
+size = Vector2(220, 52)
+
+[node name="WindSlash" type="Area2D"]
+z_index = 9
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_script")
+
+[node name="WindVisuals" type="Node2D" parent="."]
+
+[node name="WindSprite" type="AnimatedSprite2D" parent="WindVisuals"]
+texture_filter = 1
+modulate = Color(1, 1, 1, 0.56)
+sprite_frames = ExtResource("2_frames")
+animation = &"wind_slash"
+autoplay = "wind_slash"
+
+[node name="WindSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_wind_sound")
+volume_db = -9.0
+max_polyphony = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("WindSlashShape")

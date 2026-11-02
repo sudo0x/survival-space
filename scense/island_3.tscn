@@ -1,0 +1,522 @@
+[gd_scene format=4 uid="uid://cv8dv51jbmomp"]
+
+[ext_resource type="TileSet" uid="uid://chynwr3h1fkhd" path="res://assests/sprites/world_tileset_resource.tres" id="1_4bro6"]
+[ext_resource type="Script" uid="uid://bvktqmojvffkc" path="res://scripts/stage_spawn.gd" id="2_u3jav"]
+[ext_resource type="Texture2D" uid="uid://diroekludqwvd" path="res://assests/sprites/world_tileset.png" id="3_on7sc"]
+[ext_resource type="PackedScene" uid="uid://tiafx2xusijq" path="res://scense/spring_pad.tscn" id="spring_pad"]
+
+[sub_resource type="Animation" id="Animation_vdkt7"]
+resource_name = "plant_sway"
+length = 1.4
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(8, -16), Vector2(8, -14), Vector2(8, -16)]
+}
+
+[sub_resource type="Animation" id="Animation_wunxc"]
+resource_name = "tree_sway"
+length = 1.4
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(8, -17), Vector2(8, -13), Vector2(8, -17)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2hpkn"]
+_data = {
+&"plant_sway": SubResource("Animation_vdkt7"),
+&"tree_sway": SubResource("Animation_wunxc")
+}
+
+[sub_resource type="Animation" id="Animation_35aaw"]
+resource_name = "plant_sway"
+length = 1.4
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(8, -16), Vector2(8, -14), Vector2(8, -16)]
+}
+
+[sub_resource type="Animation" id="Animation_cackw"]
+resource_name = "tree_sway"
+length = 1.4
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(8, -17), Vector2(8, -13), Vector2(8, -17)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bm65u"]
+_data = {
+&"plant_sway": SubResource("Animation_35aaw"),
+&"tree_sway": SubResource("Animation_cackw")
+}
+
+[sub_resource type="Animation" id="Animation_4d16f"]
+resource_name = "plant_sway"
+length = 1.4
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(8, -16), Vector2(8, -14), Vector2(8, -16)]
+}
+
+[sub_resource type="Animation" id="Animation_ohpi2"]
+resource_name = "tree_sway"
+length = 1.4
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(8, -17), Vector2(8, -13), Vector2(8, -17)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xc4yo"]
+_data = {
+&"plant_sway": SubResource("Animation_4d16f"),
+&"tree_sway": SubResource("Animation_ohpi2")
+}
+
+[sub_resource type="Animation" id="Animation_le421"]
+resource_name = "plant_sway"
+length = 1.4
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(8, -16), Vector2(8, -14), Vector2(8, -16)]
+}
+
+[sub_resource type="Animation" id="Animation_8ilx4"]
+resource_name = "tree_sway"
+length = 1.4
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(8, -17), Vector2(8, -13), Vector2(8, -17)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_s0co7"]
+_data = {
+&"plant_sway": SubResource("Animation_le421"),
+&"tree_sway": SubResource("Animation_8ilx4")
+}
+
+[sub_resource type="Animation" id="Animation_oo281"]
+resource_name = "plant_sway"
+length = 1.4
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(8, -16), Vector2(8, -14), Vector2(8, -16)]
+}
+
+[sub_resource type="Animation" id="Animation_verm7"]
+resource_name = "tree_sway"
+length = 1.4
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(8, -17), Vector2(8, -13), Vector2(8, -17)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fy6r6"]
+_data = {
+&"plant_sway": SubResource("Animation_oo281"),
+&"tree_sway": SubResource("Animation_verm7")
+}
+
+[sub_resource type="Animation" id="Animation_cue4n"]
+resource_name = "plant_sway"
+length = 1.4
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(8, -16), Vector2(8, -14), Vector2(8, -16)]
+}
+
+[sub_resource type="Animation" id="Animation_axsqu"]
+resource_name = "tree_sway"
+length = 1.4
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(8, -17), Vector2(8, -13), Vector2(8, -17)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_s34xy"]
+_data = {
+&"plant_sway": SubResource("Animation_cue4n"),
+&"tree_sway": SubResource("Animation_axsqu")
+}
+
+[node name="Island3" type="Node2D" unique_id=742858550]
+
+[node name="Ground" type="TileMapLayer" parent="." unique_id=1417773043]
+tile_map_data = PackedByteArray("AAD//wUAAAAIAAAAAAD//wYAAAAIAAEAAAD//wcAAAAIAAIAAAAAAAUAAAAIAAAAAAAAAAYAAAAIAAEAAAAAAAcAAAAIAAIAAAABAAUAAAAIAAAAAAABAAYAAAAIAAEAAAABAAcAAAAIAAIAAAACAAUAAAAIAAAAAAACAAYAAAAIAAEAAAACAAcAAAAIAAIAAAADAAUAAAAIAAAAAAADAAYAAAAIAAEAAAADAAcAAAAIAAIAAAAEAAUAAAAIAAAAAAAEAAYAAAAIAAEAAAAEAAcAAAAIAAIAAAAFAAUAAAAIAAAAAAAFAAYAAAAIAAEAAAAFAAcAAAAIAAIAAAAGAAUAAAAIAAAAAAAGAAYAAAAIAAEAAAAGAAcAAAAIAAIAAAAHAAUAAAAIAAAAAAAHAAYAAAAIAAEAAAAHAAcAAAAIAAIAAAAIAAUAAAAIAAAAAAAIAAYAAAAIAAEAAAAIAAcAAAAIAAIAAAAMAAQAAAAIAAAAAAAMAAUAAAAIAAEAAAAMAAYAAAAIAAIAAAANAAQAAAAIAAAAAAANAAUAAAAIAAEAAAANAAYAAAAIAAIAAAAOAAQAAAAIAAAAAAAOAAUAAAAIAAEAAAAOAAYAAAAIAAIAAAAPAAQAAAAIAAEAAAAPAAUAAAAIAAIAAAAQAAQAAAAIAAEAAAAQAAUAAAAIAAIAAAASAAQAAAAIAAEAAAASAAUAAAAIAAIAAAATAAQAAAAIAAEAAAATAAUAAAAIAAIAAAAXAAMAAAAIAAAAAAAXAAQAAAAIAAEAAAAXAAUAAAAIAAIAAAAYAAMAAAAIAAAAAAAYAAQAAAAIAAEAAAAYAAUAAAAIAAIAAAAZAAQAAAAIAAAAAAAZAAUAAAAIAAEAAAAbAAUAAAAIAAAAAAAcAAUAAAAIAAAAAAAhAAcAAAAIAAAAAAAiAAcAAAAIAAAAAAAjAAcAAAAIAAAAAAAsAAQAAAAIAAEAAAAsAAUAAAAIAAIAAAAtAAQAAAAAAAEAAAAtAAUAAAAAAAIAAAAuAAQAAAABAAEAAAAuAAUAAAABAAIAAAAvAAQAAAACAAEAAAAvAAUAAAACAAIAAAAwAAQAAAADAAEAAAAwAAUAAAADAAIAAAAxAAQAAAAEAAEAAAAxAAUAAAAEAAIAAAAyAAQAAAAFAAEAAAAyAAUAAAAFAAIAAAA3AAUAAAAIAAAAAAA3AAYAAAAIAAEAAAA3AAcAAAAIAAIAAAA4AAUAAAAIAAAAAAA4AAYAAAAIAAEAAAA4AAcAAAAIAAIAAAA5AAUAAAAIAAAAAAA5AAYAAAAIAAEAAAA5AAcAAAAIAAIAAAA6AAUAAAAIAAAAAAA6AAYAAAAIAAEAAAA6AAcAAAAIAAIAAAA7AAUAAAAIAAEAAAA7AAYAAAAIAAIAAAA8AAUAAAAIAAEAAAA8AAYAAAAIAAIAAAA9AAUAAAAIAAEAAAA9AAYAAAAIAAIAAAA/AAUAAAAIAAEAAAA/AAYAAAAIAAIAAABAAAUAAAAIAAEAAABAAAYAAAAIAAIAAABBAAUAAAAIAAEAAABBAAYAAAAIAAIAAABCAAUAAAAIAAEAAABCAAYAAAAIAAIAAABDAAUAAAAIAAEAAABDAAYAAAAIAAIAAABEAAUAAAAIAAEAAABEAAYAAAAIAAIAAABFAAUAAAAIAAEAAABFAAYAAAAIAAIAAABGAAUAAAAIAAAAAABGAAYAAAAIAAEAAABGAAcAAAAIAAIAAAAJAAUAAAAIAAAAAAAJAAYAAAAIAAEAAAAJAAcAAAAIAAIAAAAKAAUAAAAIAAAAAAAKAAYAAAAIAAEAAAAKAAcAAAAIAAIAAAALAAUAAAAIAAAAAAALAAYAAAAIAAEAAAAUAAQAAAAIAAEAAAAUAAUAAAAIAAIAAAAVAAQAAAAIAAEAAAAVAAUAAAAIAAIAAAAWAAMAAAAIAAAAAAAWAAQAAAAIAAEAAAAWAAUAAAAIAAIAAAAeAAYAAAAIAAAAAAAfAAYAAAAIAAAAAAAgAAcAAAAIAAAAAAA0AAYAAAAIAAAAAAA2AAYAAAAIAAAAAAA2AAcAAAAIAAEAAABHAAUAAAAIAAAAAABHAAYAAAAIAAEAAABHAAcAAAAIAAIAAABIAAYAAAAAAAAAAABIAAcAAAAAAAEAAABJAAYAAAABAAAAAABJAAcAAAABAAEAAABKAAcAAAACAAAAAABLAAcAAAADAAAAAABMAAcAAAAEAAAAAABNAAcAAAAFAAAAAABOAAcAAAAGAAAAAABgAAMAAAAGAAAAAABgAAQAAAAGAAEAAABgAAUAAAAGAAIAAABhAAMAAAAHAAAAAABhAAQAAAAHAAEAAABhAAUAAAAHAAIAAABoAAMAAAAFAAAAAABoAAQAAAAFAAEAAABoAAUAAAAFAAIAAABrAAQAAAAIAAAAAABrAAUAAAAIAAEAAABrAAYAAAAIAAIAAABsAAQAAAAAAAAAAABsAAUAAAAAAAEAAABsAAYAAAAAAAIAAABtAAUAAAABAAAAAABtAAYAAAABAAEAAABuAAUAAAACAAAAAABuAAYAAAACAAEAAABvAAUAAAADAAAAAABvAAYAAAADAAEAAABwAAUAAAAEAAAAAABwAAYAAAAEAAEAAABxAAQAAAAFAAAAAABxAAUAAAAFAAEAAABxAAYAAAAFAAIAAAByAAQAAAAGAAAAAAByAAUAAAAGAAEAAAByAAYAAAAGAAIAAAAPAAMAAAAIAAAAAAAQAAMAAAAIAAAAAAASAAMAAAAIAAAAAAATAAMAAAAIAAAAAAAZAAYAAAAIAAIAAAAbAAYAAAAIAAEAAAAbAAcAAAAIAAIAAAAcAAYAAAAIAAEAAAAcAAcAAAAIAAIAAAAdAAYAAAAIAAAAAAAdAAcAAAAIAAEAAAAdAAgAAAAIAAIAAAAhAAgAAAAIAAEAAAAhAAkAAAAIAAIAAAAiAAgAAAAIAAEAAAAiAAkAAAAIAAIAAAAjAAgAAAAIAAEAAAAjAAkAAAAIAAIAAAAkAAgAAAAIAAAAAAAkAAkAAAAIAAEAAAAkAAoAAAAIAAIAAAAlAAgAAAAIAAAAAAAlAAkAAAAIAAEAAAAlAAoAAAAIAAIAAAAmAAgAAAAIAAAAAAAmAAkAAAAIAAEAAAAmAAoAAAAIAAIAAAAnAAgAAAAIAAAAAAAnAAkAAAAIAAEAAAAnAAoAAAAIAAIAAAAoAAgAAAAIAAAAAAAoAAkAAAAIAAEAAAAoAAoAAAAIAAIAAAAtAAgAAAAIAAAAAAAtAAkAAAAIAAEAAAAtAAoAAAAIAAIAAAAuAAgAAAAIAAAAAAAuAAkAAAAIAAEAAAAuAAoAAAAIAAIAAAAvAAgAAAAIAAAAAAAvAAkAAAAIAAEAAAAvAAoAAAAIAAIAAAAwAAcAAAAIAAAAAAAwAAgAAAAIAAEAAAAwAAkAAAAIAAIAAAAxAAcAAAAIAAAAAAAxAAgAAAAIAAEAAAAxAAkAAAAIAAIAAAAyAAcAAAAIAAAAAAAyAAgAAAAIAAEAAAAyAAkAAAAIAAIAAAAzAAcAAAAIAAAAAAAzAAgAAAAIAAEAAAAzAAkAAAAIAAIAAAA7AAQAAAAIAAAAAAA8AAQAAAAIAAAAAAA9AAQAAAAIAAAAAAA/AAQAAAAIAAAAAABAAAQAAAAIAAAAAABBAAQAAAAIAAAAAABCAAQAAAAIAAAAAABDAAQAAAAIAAAAAABEAAQAAAAIAAAAAABFAAQAAAAIAAAAAAALAAcAAAAIAAIAAAAUAAMAAAAIAAAAAAAVAAMAAAAIAAAAAAAeAAcAAAAIAAEAAAAeAAgAAAAIAAIAAAAfAAcAAAAIAAEAAAAfAAgAAAAIAAIAAAAgAAgAAAAIAAEAAAAgAAkAAAAIAAIAAAApAAgAAAAIAAAAAAApAAkAAAAIAAEAAAApAAoAAAAIAAIAAAAqAAgAAAAIAAAAAAAqAAkAAAAIAAEAAAAqAAoAAAAIAAIAAAArAAgAAAAIAAAAAAArAAkAAAAIAAEAAAArAAoAAAAIAAIAAAA0AAcAAAAIAAEAAAA0AAgAAAAIAAIAAAA2AAgAAAAIAAIAAABIAAgAAAAAAAIAAABJAAgAAAABAAIAAABKAAgAAAACAAEAAABKAAkAAAACAAIAAABLAAgAAAADAAEAAABLAAkAAAADAAIAAABMAAgAAAAEAAEAAABMAAkAAAAEAAIAAABNAAgAAAAFAAEAAABNAAkAAAAFAAIAAABOAAgAAAAGAAEAAABOAAkAAAAGAAIAAABPAAgAAAAHAAAAAABPAAkAAAAHAAEAAABPAAoAAAAHAAIAAABQAAgAAAAIAAAAAABQAAkAAAAIAAEAAABQAAoAAAAIAAIAAABTAAgAAAACAAAAAABTAAkAAAACAAEAAABTAAoAAAACAAIAAABUAAgAAAADAAAAAABUAAkAAAADAAEAAABUAAoAAAADAAIAAABVAAcAAAAEAAAAAABVAAgAAAAEAAEAAABVAAkAAAAEAAIAAABWAAcAAAAFAAAAAABWAAgAAAAFAAEAAABWAAkAAAAFAAIAAABXAAcAAAAGAAAAAABXAAgAAAAGAAEAAABXAAkAAAAGAAIAAABYAAcAAAAHAAAAAABYAAgAAAAHAAEAAABYAAkAAAAHAAIAAABtAAcAAAABAAIAAABuAAcAAAACAAIAAABvAAcAAAADAAIAAABwAAcAAAAEAAIAAAAPAAAAAAAGAAAAAAAPAAEAAAAGAAEAAAAPAAIAAAAGAAIAAAAQAAAAAAAHAAAAAAAQAAEAAAAHAAEAAAAQAAIAAAAHAAIAAAARAAAAAAAIAAAAAAARAAEAAAAIAAEAAAARAAIAAAAIAAIAAAASAAAAAAAAAAAAAAASAAEAAAAAAAEAAAASAAIAAAAAAAIAAAATAAAAAAABAAAAAAATAAEAAAABAAEAAAATAAIAAAABAAIAAAAUAAAAAAACAAAAAAAUAAEAAAACAAEAAAAUAAIAAAACAAIAAAAVAAAAAAADAAAAAAAVAAEAAAADAAEAAAAVAAIAAAADAAIAAAAYAAAAAAAGAAAAAAAYAAEAAAAGAAEAAAAYAAIAAAAGAAIAAAAZAAAAAAAHAAAAAAAZAAEAAAAHAAEAAAAZAAIAAAAHAAIAAAAaAAAAAAAIAAAAAAAaAAEAAAAIAAEAAAAaAAIAAAAIAAIAAAAbAAAAAAAAAAAAAAAbAAEAAAAAAAEAAAAbAAIAAAAAAAIAAAAcAAAAAAABAAAAAAAcAAEAAAABAAEAAAAcAAIAAAABAAIAAAAsAAMAAAAIAAAAAAAtAAMAAAAAAAAAAAAuAAMAAAABAAAAAAAvAAMAAAACAAAAAAAwAAMAAAADAAAAAAAxAAMAAAAEAAAAAAAyAAMAAAAFAAAAAAA1AAIAAAAIAAAAAAA1AAMAAAAIAAEAAAA1AAQAAAAIAAIAAAA2AAIAAAAAAAAAAAA2AAMAAAAAAAEAAAA2AAQAAAAAAAIAAAA3AAIAAAABAAAAAAA3AAMAAAABAAEAAAA3AAQAAAABAAIAAAA4AAIAAAACAAAAAAA4AAMAAAACAAEAAAA4AAQAAAACAAIAAAA5AAIAAAADAAAAAAA5AAMAAAADAAEAAAA5AAQAAAADAAIAAAA8AAEAAAAGAAAAAAA8AAIAAAAGAAEAAAA8AAMAAAAGAAIAAAA9AAEAAAAHAAAAAAA9AAIAAAAHAAEAAAA9AAMAAAAHAAIAAAA+AAEAAAAIAAAAAAA+AAIAAAAIAAEAAAA+AAMAAAAIAAIAAAA/AAEAAAAAAAAAAAA/AAIAAAAAAAEAAAA/AAMAAAAAAAIAAABAAAEAAAABAAAAAABAAAIAAAABAAEAAABAAAMAAAABAAIAAABZAAEAAAAIAAAAAABZAAIAAAAIAAEAAABZAAMAAAAIAAIAAABaAAEAAAAAAAAAAABaAAIAAAAAAAEAAABaAAMAAAAAAAIAAABbAAEAAAABAAAAAABbAAIAAAABAAEAAABbAAMAAAABAAIAAABcAAEAAAACAAAAAABcAAIAAAACAAEAAABcAAMAAAACAAIAAABdAAEAAAADAAAAAABdAAIAAAADAAEAAABdAAMAAAADAAIAAABeAAEAAAAEAAAAAABeAAIAAAAEAAEAAABeAAMAAAAEAAIAAABfAAEAAAAFAAAAAABfAAIAAAAFAAEAAABfAAMAAAAFAAIAAABiAAAAAAAIAAAAAABiAAEAAAAIAAEAAABiAAIAAAAIAAIAAABjAAAAAAAAAAAAAABjAAEAAAAAAAEAAABjAAIAAAAAAAIAAABkAAAAAAABAAAAAABkAAEAAAABAAEAAABkAAIAAAABAAIAAABlAAAAAAACAAAAAABlAAEAAAACAAEAAABlAAIAAAACAAIAAABmAAAAAAADAAAAAABmAAEAAAADAAEAAABmAAIAAAADAAIAAABnAAAAAAAEAAAAAABnAAEAAAAEAAEAAABnAAIAAAAEAAIAAABaAAsAAAAAAAAAAABaAAwAAAAAAAEAAABaAA0AAAAAAAIAAABbAAsAAAABAAAAAABbAAwAAAABAAEAAABbAA0AAAABAAIAAABcAAkAAAACAAAAAABcAAoAAAACAAEAAABcAAsAAAACAAIAAABdAAkAAAADAAAAAABdAAoAAAADAAEAAABdAAsAAAADAAIAAABjAAYAAAAAAAAAAABjAAcAAAAAAAEAAABjAAgAAAAAAAIAAABkAAYAAAABAAAAAABkAAcAAAABAAEAAABkAAgAAAABAAIAAABlAAYAAAACAAAAAABlAAcAAAACAAEAAABlAAgAAAACAAIAAABmAAYAAAADAAAAAABmAAcAAAADAAEAAABmAAgAAAADAAIAAABnAAYAAAAEAAAAAABnAAcAAAAEAAEAAABnAAgAAAAEAAIAAAA=")
+tile_set = ExtResource("1_4bro6")
+
+[node name="SpawnPoints" type="Node2D" parent="." unique_id=431027329]
+
+[node name="MoonPatrolA" type="Marker2D" parent="SpawnPoints" unique_id=531260502]
+position = Vector2(240, 44)
+script = ExtResource("2_u3jav")
+movement_speed = 42.0
+patrol_distance = 38.0
+
+[node name="MoonPouncer" type="Marker2D" parent="SpawnPoints" unique_id=1692641884]
+position = Vector2(448, 72)
+script = ExtResource("2_u3jav")
+spawn_kind = 1
+movement_speed = 48.0
+patrol_distance = 34.0
+
+[node name="MoonPatrolB" type="Marker2D" parent="SpawnPoints" unique_id=1591779429]
+position = Vector2(704, 124)
+script = ExtResource("2_u3jav")
+movement_speed = 46.0
+patrol_distance = 40.0
+
+[node name="MoonBat" type="Marker2D" parent="SpawnPoints" unique_id=1563981240]
+position = Vector2(96, 12)
+script = ExtResource("2_u3jav")
+spawn_kind = 2
+movement_speed = 42.0
+patrol_distance = 100.0
+
+[node name="MoonBeetle" type="Marker2D" parent="SpawnPoints" unique_id=2140667922]
+position = Vector2(584, 95)
+script = ExtResource("2_u3jav")
+spawn_kind = 3
+movement_speed = 34.0
+patrol_distance = 38.0
+
+[node name="MoonWisp" type="Marker2D" parent="SpawnPoints" unique_id=872870247]
+position = Vector2(920, 8)
+script = ExtResource("2_u3jav")
+spawn_kind = 4
+movement_speed = 30.0
+patrol_distance = 90.0
+
+[node name="MoonCoinA" type="Marker2D" parent="SpawnPoints" unique_id=830358294]
+position = Vector2(128, 34)
+script = ExtResource("2_u3jav")
+spawn_kind = 5
+
+[node name="MoonFruit" type="Marker2D" parent="SpawnPoints" unique_id=1715665625]
+position = Vector2(336, 2)
+script = ExtResource("2_u3jav")
+spawn_kind = 6
+movement_speed = 0.0
+patrol_distance = 0.0
+treasure_points = 5
+
+[node name="MoonCoinB" type="Marker2D" parent="SpawnPoints" unique_id=1869570259]
+position = Vector2(640, 82)
+script = ExtResource("2_u3jav")
+spawn_kind = 5
+
+[node name="MoonCoinC" type="Marker2D" parent="SpawnPoints" unique_id=2107128999]
+position = Vector2(840, 50)
+script = ExtResource("2_u3jav")
+spawn_kind = 5
+
+[node name="MoonDashCharge" type="Marker2D" parent="SpawnPoints" unique_id=789484847]
+position = Vector2(776, 46)
+script = ExtResource("2_u3jav")
+spawn_kind = 7
+
+[node name="MoonCheckpoint" type="Marker2D" parent="SpawnPoints" unique_id=495896534]
+position = Vector2(576, 114)
+script = ExtResource("2_u3jav")
+spawn_kind = 8
+
+[node name="MoonMovingPlatform" type="Marker2D" parent="SpawnPoints" unique_id=222312851]
+position = Vector2(320, 38)
+script = ExtResource("2_u3jav")
+spawn_kind = 9
+platform_end_offset = Vector2(32, -18)
+platform_travel_time = 3.2
+
+[node name="AncientRelic" type="Marker2D" parent="SpawnPoints" unique_id=286519745]
+position = Vector2(720, 82)
+script = ExtResource("2_u3jav")
+spawn_kind = 10
+relic_id = "island_3"
+
+[node name="MoonPatrolC" type="Marker2D" parent="SpawnPoints" unique_id=645884035]
+position = Vector2(1232, 108)
+script = ExtResource("2_u3jav")
+movement_speed = 42.0
+patrol_distance = 38.0
+
+[node name="MoonPouncerB" type="Marker2D" parent="SpawnPoints" unique_id=1687539743]
+position = Vector2(1568, 44)
+script = ExtResource("2_u3jav")
+spawn_kind = 1
+movement_speed = 58.0
+patrol_distance = 30.0
+
+[node name="MoonWispB" type="Marker2D" parent="SpawnPoints" unique_id=1488611866]
+position = Vector2(1712, 0)
+script = ExtResource("2_u3jav")
+spawn_kind = 4
+movement_speed = 30.0
+patrol_distance = 44.0
+
+[node name="MoonBatB" type="Marker2D" parent="SpawnPoints" unique_id=1867036865]
+position = Vector2(1408, 56)
+script = ExtResource("2_u3jav")
+spawn_kind = 2
+patrol_distance = 48.0
+
+[node name="MoonCacheA" type="Marker2D" parent="SpawnPoints" unique_id=1991304620]
+position = Vector2(1200, 68)
+script = ExtResource("2_u3jav")
+spawn_kind = 5
+
+[node name="MoonCacheB" type="Marker2D" parent="SpawnPoints" unique_id=1894967027]
+position = Vector2(1520, 64)
+script = ExtResource("2_u3jav")
+spawn_kind = 5
+
+[node name="MoonFruitB" type="Marker2D" parent="SpawnPoints" unique_id=1020500685]
+position = Vector2(1648, 76)
+script = ExtResource("2_u3jav")
+spawn_kind = 6
+
+[node name="MoonCheckpointB" type="Marker2D" parent="SpawnPoints" unique_id=1923920956]
+position = Vector2(1600, 82)
+script = ExtResource("2_u3jav")
+spawn_kind = 8
+
+[node name="MoonSkyCache" type="Marker2D" parent="SpawnPoints" unique_id=1832397185]
+position = Vector2(320, -28)
+script = ExtResource("2_u3jav")
+spawn_kind = 5
+treasure_points = 2
+
+[node name="MoonCanyonFruit" type="Marker2D" parent="SpawnPoints" unique_id=1913471903]
+position = Vector2(864, 14)
+script = ExtResource("2_u3jav")
+spawn_kind = 6
+treasure_points = 3
+
+[node name="MoonFarSkyCache" type="Marker2D" parent="SpawnPoints" unique_id=1094005819]
+position = Vector2(1520, -22)
+script = ExtResource("2_u3jav")
+spawn_kind = 5
+treasure_points = 2
+
+[node name="MoonRaiderA" type="Marker2D" parent="SpawnPoints" unique_id=111671012]
+position = Vector2(520, 72)
+script = ExtResource("2_u3jav")
+spawn_kind = 11
+movement_speed = 40.0
+patrol_distance = 64.0
+
+[node name="MoonRaiderB" type="Marker2D" parent="SpawnPoints" unique_id=125348431]
+position = Vector2(1520, 44)
+script = ExtResource("2_u3jav")
+spawn_kind = 11
+movement_speed = 44.0
+patrol_distance = 72.0
+
+[node name="RuneTortoise" type="Marker2D" parent="SpawnPoints" unique_id=1603407166]
+position = Vector2(920, 108)
+script = ExtResource("2_u3jav")
+spawn_kind = 12
+movement_speed = 24.0
+patrol_distance = 48.0
+
+[node name="Scenery" type="Node2D" parent="." unique_id=267667134]
+
+[node name="Tree0" type="Node2D" parent="Scenery" unique_id=1327999573]
+position = Vector2(144, 74)
+
+[node name="Sprite2D" type="Sprite2D" parent="Scenery/Tree0" unique_id=2026058500]
+z_index = -1
+position = Vector2(8, -15)
+scale = Vector2(2, 2)
+texture = ExtResource("3_on7sc")
+region_enabled = true
+region_rect = Rect2(48, 80, 32, 32)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Scenery/Tree0" unique_id=746855843]
+libraries/ = SubResource("AnimationLibrary_2hpkn")
+autoplay = &"tree_sway"
+
+[node name="Tree1" type="Node2D" parent="Scenery" unique_id=1175173393]
+position = Vector2(524, 106)
+
+[node name="Sprite2D" type="Sprite2D" parent="Scenery/Tree1" unique_id=572613485]
+z_index = -1
+position = Vector2(8, -15)
+scale = Vector2(2, 2)
+texture = ExtResource("3_on7sc")
+region_enabled = true
+region_rect = Rect2(48, 80, 32, 32)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Scenery/Tree1" unique_id=2098663502]
+libraries/ = SubResource("AnimationLibrary_bm65u")
+autoplay = &"tree_sway"
+
+[node name="Tree2" type="Node2D" parent="Scenery" unique_id=1038240235]
+position = Vector2(854, 90)
+
+[node name="Sprite2D" type="Sprite2D" parent="Scenery/Tree2" unique_id=149100581]
+z_index = -1
+position = Vector2(8, -15)
+scale = Vector2(2, 2)
+texture = ExtResource("3_on7sc")
+region_enabled = true
+region_rect = Rect2(48, 80, 32, 32)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Scenery/Tree2" unique_id=1234492936]
+libraries/ = SubResource("AnimationLibrary_xc4yo")
+autoplay = &"tree_sway"
+
+[node name="Plant0" type="Node2D" parent="Scenery" unique_id=638263501]
+position = Vector2(64, 61)
+
+[node name="Sprite2D" type="Sprite2D" parent="Scenery/Plant0" unique_id=729033657]
+z_index = -2
+position = Vector2(8, -15)
+scale = Vector2(2, 2)
+texture = ExtResource("3_on7sc")
+region_enabled = true
+region_rect = Rect2(0, 48, 16, 32)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Scenery/Plant0" unique_id=1119157320]
+libraries/ = SubResource("AnimationLibrary_s0co7")
+autoplay = &"plant_sway"
+
+[node name="Plant1" type="Node2D" parent="Scenery" unique_id=1932098341]
+position = Vector2(384, 29)
+
+[node name="Sprite2D" type="Sprite2D" parent="Scenery/Plant1" unique_id=311181409]
+z_index = -2
+position = Vector2(8, -15)
+scale = Vector2(2, 2)
+texture = ExtResource("3_on7sc")
+region_enabled = true
+region_rect = Rect2(0, 48, 16, 32)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Scenery/Plant1" unique_id=1563742400]
+libraries/ = SubResource("AnimationLibrary_fy6r6")
+autoplay = &"plant_sway"
+
+[node name="Plant2" type="Node2D" parent="Scenery" unique_id=1935852214]
+position = Vector2(764, 109)
+
+[node name="Sprite2D" type="Sprite2D" parent="Scenery/Plant2" unique_id=1913062417]
+z_index = -2
+position = Vector2(8, -15)
+scale = Vector2(2, 2)
+texture = ExtResource("3_on7sc")
+region_enabled = true
+region_rect = Rect2(0, 48, 16, 32)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Scenery/Plant2" unique_id=479732411]
+libraries/ = SubResource("AnimationLibrary_s34xy")
+autoplay = &"plant_sway"
+
+[node name="SpringPads" type="Node2D" parent="." unique_id=631637610]
+
+[node name="MoonSpring" parent="SpringPads" unique_id=1477767119 instance=ExtResource("spring_pad")]
+position = Vector2(792, 112)

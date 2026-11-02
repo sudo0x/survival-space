@@ -1,0 +1,43 @@
+[gd_resource type="SpriteFrames" load_steps=10 format=3]
+
+[ext_resource type="Texture2D" path="res://assests/sprites/wind_column_reference_sheet.png" id="1_sheet"]
+
+[sub_resource type="AtlasTexture" id="Wind0"]
+atlas = ExtResource("1_sheet")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="Wind1"]
+atlas = ExtResource("1_sheet")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="Wind2"]
+atlas = ExtResource("1_sheet")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="Wind3"]
+atlas = ExtResource("1_sheet")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="Wind4"]
+atlas = ExtResource("1_sheet")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="Wind5"]
+atlas = ExtResource("1_sheet")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="Wind6"]
+atlas = ExtResource("1_sheet")
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="Wind7"]
+atlas = ExtResource("1_sheet")
+region = Rect2(192, 64, 64, 64)
+
+[resource]
+animations = [{
+"frames": [{"duration": 1.0, "texture": SubResource("Wind0")}, {"duration": 1.0, "texture": SubResource("Wind1")}, {"duration": 1.0, "texture": SubResource("Wind2")}, {"duration": 1.0, "texture": SubResource("Wind3")}, {"duration": 1.0, "texture": SubResource("Wind4")}, {"duration": 1.0, "texture": SubResource("Wind5")}, {"duration": 1.0, "texture": SubResource("Wind6")}, {"duration": 1.0, "texture": SubResource("Wind7")}],
+"loop": true,
+"name": &"wind",
+"speed": 14.0
+}]

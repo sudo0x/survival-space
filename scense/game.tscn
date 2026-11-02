@@ -1,0 +1,487 @@
+[gd_scene format=3 uid="uid://dd6x8j541kybl"]
+
+[ext_resource type="PackedScene" uid="uid://b6owufxv665cu" path="res://scense/player.tscn" id="1_ftc5l"]
+[ext_resource type="PackedScene" uid="uid://5cgnptfjd31m" path="res://scense/platform.tscn" id="3_wc2y1"]
+[ext_resource type="AudioStream" uid="uid://7fhixlk21il0" path="res://assests/music/time_for_adventure.mp3" id="4_music"]
+[ext_resource type="FontFile" uid="uid://bu2nfnc1s7tm3" path="res://assests/fonts/PixelOperator8-Bold.ttf" id="5_font"]
+[ext_resource type="PackedScene" uid="uid://0e8wmqbqnw0t" path="res://scense/slime.tscn" id="6_slime"]
+[ext_resource type="PackedScene" path="res://scense/pickup.tscn" id="7_pickup"]
+[ext_resource type="Script" uid="uid://b1ajjkxlrdjxm" path="res://scripts/game.gd" id="8_game"]
+[ext_resource type="AudioStream" uid="uid://den8xpcycuclg" path="res://assests/sounds/coin.wav" id="12_coin"]
+[ext_resource type="Script" uid="uid://bvktqmojvffkc" path="res://scripts/stage_spawn.gd" id="13_stage_spawn"]
+[ext_resource type="PackedScene" uid="uid://ds1vtsf2nt4we" path="res://scense/touch_controls.tscn" id="14_touch_controls"]
+[ext_resource type="PackedScene" path="res://scense/inventory_panel.tscn" id="15_inventory"]
+[ext_resource type="PackedScene" path="res://scense/space_arena.tscn" id="18_space_arena"]
+[ext_resource type="PackedScene" path="res://scense/upgrade_panel.tscn" id="19_upgrade_panel"]
+[ext_resource type="Script" path="res://scripts/swarm_director.gd" id="20_swarm_director"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hud"]
+content_margin_left = 12.0
+content_margin_top = 7.0
+content_margin_right = 12.0
+content_margin_bottom = 7.0
+bg_color = Color(0.035, 0.043, 0.078, 0.82)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.32, 0.52, 0.7, 0.9)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_health_bg"]
+bg_color = Color(0.035, 0.043, 0.078, 0.94)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.32, 0.52, 0.7, 0.95)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_health_fill"]
+bg_color = Color(0.26, 0.84, 0.69, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mana_fill"]
+bg_color = Color(0.31, 0.82, 1, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xp_fill"]
+bg_color = Color(0.27, 0.72, 1, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_flight_fill"]
+bg_color = Color(1, 0.69, 0.31, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dash_fill"]
+bg_color = Color(0.69, 0.52, 1, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="Animation" id="ComboPopAnimation"]
+resource_name = "combo_pop"
+length = 0.22
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ComboLabel:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.08, 0.22),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.72, 0.72), Vector2(1.15, 1.15), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="ComboAnimationLibrary"]
+_data = {
+&"combo_pop": SubResource("ComboPopAnimation")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_boss_fill"]
+bg_color = Color(1, 0.34, 0.45, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="Animation" id="Animation_wc2y1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(339, 84)]
+}
+
+[sub_resource type="Animation" id="Animation_5ct0j"]
+resource_name = "move"
+length = 2.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(339, 84), Vector2(477, 84)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_w8bpv"]
+_data = {
+&"RESET": SubResource("Animation_wc2y1"),
+&"move": SubResource("Animation_5ct0j")
+}
+
+[node name="Game" type="Node2D" unique_id=160902187]
+script = ExtResource("8_game")
+show_touch_controls_on_desktop = true
+run_duration_seconds = 120.0
+
+[node name="SwarmDirector" type="Node" parent="."]
+script = ExtResource("20_swarm_director")
+
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=405277405]
+stream = ExtResource("4_music")
+volume_db = -16.0
+autoplay = true
+
+[node name="CoinSound" type="AudioStreamPlayer" parent="." unique_id=1800782220]
+stream = ExtResource("12_coin")
+volume_db = -5.0
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=381798219]
+
+[node name="TouchControls" parent="HUD" unique_id=1825763700 instance=ExtResource("14_touch_controls")]
+
+[node name="InventoryPanel" parent="HUD" unique_id=1542669583 instance=ExtResource("15_inventory")]
+
+[node name="Controls" type="PanelContainer" parent="HUD" unique_id=144462903]
+visible = false
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 18.0
+offset_top = -52.0
+offset_right = -18.0
+offset_bottom = -16.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_hud")
+
+[node name="Label" type="Label" parent="HUD/Controls" unique_id=2012803137]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.82, 0.92, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.8)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/font = ExtResource("5_font")
+theme_override_font_sizes/font_size = 16
+text = "A/D MOVE / MOUSE AIM / LEFT CLICK HIT / RIGHT CLICK MAGIC / SPACE JUMP / K DASH"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Status" type="Label" parent="HUD" unique_id=1557711439]
+anchors_preset = -1
+anchor_right = 0.9
+offset_left = 18.0
+offset_top = 16.0
+offset_right = -8.0
+offset_bottom = 42.0
+theme_override_colors/font_color = Color(1, 0.91, 0.53, 1)
+theme_override_fonts/font = ExtResource("5_font")
+theme_override_font_sizes/font_size = 16
+
+[node name="PlayerHealth" type="HBoxContainer" parent="HUD" unique_id=1455875259]
+offset_left = 18.0
+offset_top = 46.0
+offset_right = 252.0
+offset_bottom = 70.0
+theme_override_constants/separation = 8
+
+[node name="HealthLabel" type="Label" parent="HUD/PlayerHealth" unique_id=1465954751]
+custom_minimum_size = Vector2(76, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.73, 0.95, 0.88, 1)
+theme_override_fonts/font = ExtResource("5_font")
+theme_override_font_sizes/font_size = 12
+text = "HP 100/100"
+vertical_alignment = 1
+
+[node name="HealthBar" type="ProgressBar" parent="HUD/PlayerHealth" unique_id=878556033]
+custom_minimum_size = Vector2(158, 14)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/background = SubResource("StyleBoxFlat_health_bg")
+theme_override_styles/fill = SubResource("StyleBoxFlat_health_fill")
+value = 100.0
+show_percentage = false
+
+[node name="PlayerMana" type="HBoxContainer" parent="HUD" unique_id=1577007492]
+offset_left = 276.0
+offset_top = 46.0
+offset_right = 556.0
+offset_bottom = 70.0
+theme_override_constants/separation = 8
+
+[node name="ManaLabel" type="Label" parent="HUD/PlayerMana" unique_id=816997355]
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+tooltip_text = "Blue bar: jump mana. Cyan enemy orbs give 10 to 100. B is stored overflow, up to 1000; each 100 refills an empty bar."
+theme_override_colors/font_color = Color(0.58, 0.86, 1, 1)
+theme_override_fonts/font = ExtResource("5_font")
+theme_override_font_sizes/font_size = 9
+text = "MANA 100/100 B0"
+vertical_alignment = 1
+
+[node name="ManaBar" type="ProgressBar" parent="HUD/PlayerMana" unique_id=231063219]
+custom_minimum_size = Vector2(120, 14)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/background = SubResource("StyleBoxFlat_health_bg")
+theme_override_styles/fill = SubResource("StyleBoxFlat_mana_fill")
+value = 100.0
+show_percentage = false
+
+[node name="MagicStyle" type="Label" parent="HUD" unique_id=1846675623]
+offset_left = 566.0
+offset_top = 46.0
+offset_right = 900.0
+offset_bottom = 70.0
+theme_override_colors/font_color = Color(0.32, 0.82, 1, 1)
+theme_override_fonts/font = ExtResource("5_font")
+theme_override_font_sizes/font_size = 10
+text = "SPELL: ARCANE"
+vertical_alignment = 1
+
+[node name="PlayerXP" type="HBoxContainer" parent="HUD" unique_id=1269315570]
+offset_left = 18.0
+offset_top = 73.0
+offset_right = 252.0
+offset_bottom = 95.0
+theme_override_constants/separation = 8
+
+[node name="XPLabel" type="Label" parent="HUD/PlayerXP" unique_id=1674310379]
+custom_minimum_size = Vector2(90, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.57, 0.84, 1, 1)
+theme_override_fonts/font = ExtResource("5_font")
+theme_override_font_sizes/font_size = 10
+text = "LV 1  XP 0/8"
+vertical_alignment = 1
+
+[node name="XPBar" type="ProgressBar" parent="HUD/PlayerXP" unique_id=537670033]
+custom_minimum_size = Vector2(130, 12)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/background = SubResource("StyleBoxFlat_health_bg")
+theme_override_styles/fill = SubResource("StyleBoxFlat_xp_fill")
+max_value = 8.0
+show_percentage = false
+
+[node name="PlayerFlight" type="HBoxContainer" parent="HUD" unique_id=911842977]
+offset_left = 276.0
+offset_top = 73.0
+offset_right = 556.0
+offset_bottom = 95.0
+theme_override_constants/separation = 8
+
+[node name="FlightLabel" type="Label" parent="HUD/PlayerFlight" unique_id=1269376132]
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+tooltip_text = "Orange bar: flight fuel. B is stored overflow, up to 1000; each 100 refills an empty bar."
+theme_override_colors/font_color = Color(1, 0.73, 0.39, 1)
+theme_override_fonts/font = ExtResource("5_font")
+theme_override_font_sizes/font_size = 9
+text = "FLY 100/100 B0"
+vertical_alignment = 1
+
+[node name="FlightBar" type="ProgressBar" parent="HUD/PlayerFlight" unique_id=2048506528]
+custom_minimum_size = Vector2(120, 14)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/background = SubResource("StyleBoxFlat_health_bg")
+theme_override_styles/fill = SubResource("StyleBoxFlat_flight_fill")
+value = 100.0
+show_percentage = false
+
+[node name="PlayerDash" type="HBoxContainer" parent="HUD" unique_id=326600390]
+offset_left = 566.0
+offset_top = 73.0
+offset_right = 900.0
+offset_bottom = 95.0
+theme_override_constants/separation = 8
+
+[node name="DashLabel" type="Label" parent="HUD/PlayerDash" unique_id=173209958]
+custom_minimum_size = Vector2(190, 0)
+layout_mode = 2
+tooltip_text = "One dash spends 1 energy. Maximum 20. Enemy orbs restore 1 to 5; energy regenerates 1 point every 3 seconds. The dash lockout is 0.1 seconds."
+theme_override_colors/font_color = Color(0.82, 0.72, 1, 1)
+theme_override_fonts/font = ExtResource("5_font")
+theme_override_font_sizes/font_size = 9
+text = "DASH 20/20  CD READY"
+vertical_alignment = 1
+
+[node name="DashBar" type="ProgressBar" parent="HUD/PlayerDash" unique_id=317428644]
+custom_minimum_size = Vector2(120, 14)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/background = SubResource("StyleBoxFlat_health_bg")
+theme_override_styles/fill = SubResource("StyleBoxFlat_dash_fill")
+max_value = 20.0
+value = 20.0
+show_percentage = false
+
+[node name="TutorialHint" type="Label" parent="HUD" unique_id=675805248]
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 18.0
+offset_top = 100.0
+offset_right = -18.0
+offset_bottom = 124.0
+theme_override_colors/font_color = Color(0.78, 0.88, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.02, 0.03, 0.08, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/font = ExtResource("5_font")
+theme_override_font_sizes/font_size = 14
+autowrap_mode = 3
+
+[node name="ComboLabel" type="Label" parent="HUD" unique_id=1356553536]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -190.0
+offset_top = -235.0
+offset_right = 190.0
+offset_bottom = -197.0
+grow_horizontal = 2
+pivot_offset = Vector2(190, 19)
+theme_override_colors/font_color = Color(1, 0.85, 0.35, 1)
+theme_override_colors/font_outline_color = Color(0.035, 0.043, 0.078, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("5_font")
+theme_override_font_sizes/font_size = 20
+text = "STOMP x2! +2 TREASURE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ComboAnimationPlayer" type="AnimationPlayer" parent="HUD/ComboLabel" unique_id=2077096255]
+root_node = NodePath("../..")
+libraries/ = SubResource("ComboAnimationLibrary")
+
+[node name="BossHealth" type="VBoxContainer" parent="HUD" unique_id=2072263627]
+visible = false
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 336.0
+offset_top = 128.0
+offset_right = -336.0
+offset_bottom = 166.0
+theme_override_constants/separation = 2
+
+[node name="BossName" type="Label" parent="HUD/BossHealth" unique_id=1731531261]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.58, 0.62, 1)
+theme_override_fonts/font = ExtResource("5_font")
+theme_override_font_sizes/font_size = 12
+text = "RIFT GUARDIAN"
+horizontal_alignment = 1
+
+[node name="HealthBar" type="ProgressBar" parent="HUD/BossHealth" unique_id=1983229305]
+custom_minimum_size = Vector2(360, 12)
+layout_mode = 2
+theme_override_styles/fill = SubResource("StyleBoxFlat_boss_fill")
+max_value = 20.0
+value = 20.0
+show_percentage = false
+
+[node name="UpgradePanel" parent="HUD" unique_id=1815846453 instance=ExtResource("19_upgrade_panel")]
+layout_mode = 3
+
+[node name="SlimeA" parent="." unique_id=2095030024 instance=ExtResource("6_slime")]
+position = Vector2(110, 23)
+patrol_distance = 10.0
+speed = 28.0
+
+[node name="SlimeB" parent="." unique_id=1775608582 instance=ExtResource("6_slime")]
+position = Vector2(345, 76)
+speed = 42.0
+
+[node name="PurpleSlime" parent="." unique_id=996382553 instance=ExtResource("6_slime")]
+position = Vector2(445, 76)
+patrol_distance = 40.0
+speed = 54.0
+purple_variant = true
+pounce_enabled = true
+
+[node name="CoinA" parent="." unique_id=1924991907 instance=ExtResource("7_pickup")]
+position = Vector2(125, 72)
+
+[node name="CoinB" parent="." unique_id=1800775300 instance=ExtResource("7_pickup")]
+position = Vector2(275, 48)
+
+[node name="FruitA" parent="." unique_id=1281694718 instance=ExtResource("7_pickup")]
+position = Vector2(175, 4)
+points = 5
+pickup_type = 1
+
+[node name="ExplorePlatformA" parent="." unique_id=1755713721 instance=ExtResource("3_wc2y1")]
+position = Vector2(156, 42)
+
+[node name="ExplorePlatformB" parent="." unique_id=318637869 instance=ExtResource("3_wc2y1")]
+position = Vector2(220, 18)
+
+[node name="ExplorePlatformC" parent="." unique_id=360821574 instance=ExtResource("3_wc2y1")]
+position = Vector2(410, 42)
+
+[node name="ExplorePlatformD" parent="." unique_id=1716667064 instance=ExtResource("3_wc2y1")]
+position = Vector2(470, 18)
+
+[node name="ExplorePlatformE" parent="." unique_id=1247917485 instance=ExtResource("3_wc2y1")]
+position = Vector2(570, 42)
+
+[node name="ExplorePlatformF" parent="." unique_id=847055324 instance=ExtResource("3_wc2y1")]
+position = Vector2(630, 18)
+
+[node name="ExplorePlatformG" parent="." unique_id=1784985979 instance=ExtResource("3_wc2y1")]
+position = Vector2(700, 42)
+
+[node name="SpaceArena" parent="." unique_id=2133338341 instance=ExtResource("18_space_arena")]
+
+[node name="Player" parent="." unique_id=434880346 instance=ExtResource("1_ftc5l")]
+position = Vector2(7, 53)
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1627555096]
+position = Vector2(0, -5)
+zoom = Vector2(4, 4)
+position_smoothing_enabled = true
+position_smoothing_speed = 3.0
+
+[node name="Platform" parent="." unique_id=961985698 instance=ExtResource("3_wc2y1")]
+position = Vector2(339, 84)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Platform" unique_id=853025112]
+libraries/ = SubResource("AnimationLibrary_w8bpv")
+autoplay = &"move"
+
+[node name="RelicMarkers" type="Node2D" parent="." unique_id=1801568182]
+
+[node name="AncientRelic" type="Marker2D" parent="RelicMarkers" unique_id=540489936]
+position = Vector2(220, 2)
+script = ExtResource("13_stage_spawn")
+spawn_kind = 10
+relic_id = "island_1"

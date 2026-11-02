@@ -1,0 +1,115 @@
+[gd_scene format=3 uid="uid://b6owufxv665cu"]
+
+[ext_resource type="Script" uid="uid://c3ubxpp10k6x6" path="res://scripts/player.gd" id="1_kc2or"]
+[ext_resource type="AudioStream" uid="uid://budr1oh5csiib" path="res://assests/sounds/jump.wav" id="3_jump"]
+[ext_resource type="AudioStream" uid="uid://tvg1hh0gp8oe" path="res://assests/sounds/tap.wav" id="4_land"]
+[ext_resource type="AudioStream" uid="uid://by8v8266kqrum" path="res://assests/sounds/hurt.wav" id="5_hurt"]
+[ext_resource type="AudioStream" uid="uid://3yknsakkhjsk" path="res://assests/sounds/power_up.wav" id="6_attack"]
+[ext_resource type="Script" path="res://scripts/player_magic.gd" id="9_player_magic"]
+[ext_resource type="SpriteFrames" path="res://assests/sprites/riftwarden_frames_64.tres" id="11_frames"]
+
+[sub_resource type="Animation" id="TakeoffAnimation"]
+resource_name = "takeoff"
+length = 0.17
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite2D:scale")
+tracks/0/keys = {"times": PackedFloat32Array(0, 0.05, 0.17), "transitions": PackedFloat32Array(1, 1, 1), "update": 0, "values": [Vector2(0.5, 0.5), Vector2(0.41, 0.59), Vector2(0.5, 0.5)]}
+
+[sub_resource type="Animation" id="DoubleJumpPopAnimation"]
+resource_name = "double_jump_pop"
+length = 0.17
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite2D:scale")
+tracks/0/keys = {"times": PackedFloat32Array(0, 0.05, 0.17), "transitions": PackedFloat32Array(1, 1, 1), "update": 0, "values": [Vector2(0.5, 0.5), Vector2(0.46, 0.54), Vector2(0.5, 0.5)]}
+
+[sub_resource type="Animation" id="LandingSquashAnimation"]
+resource_name = "landing_squash"
+length = 0.17
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite2D:scale")
+tracks/0/keys = {"times": PackedFloat32Array(0, 0.05, 0.17), "transitions": PackedFloat32Array(1, 1, 1), "update": 0, "values": [Vector2(0.5, 0.5), Vector2(0.6, 0.4), Vector2(0.5, 0.5)]}
+
+[sub_resource type="Animation" id="AirDiveAnimation"]
+resource_name = "air_dive"
+length = 0.14
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite2D:scale")
+tracks/0/keys = {"times": PackedFloat32Array(0, 0.06, 0.14), "transitions": PackedFloat32Array(1, 0.7, 1), "update": 0, "values": [Vector2(0.5, 0.5), Vector2(0.38, 0.62), Vector2(0.42, 0.58)]}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AnimatedSprite2D:rotation")
+tracks/1/keys = {"times": PackedFloat32Array(0, 0.06, 0.14), "transitions": PackedFloat32Array(1, 0.7, 1), "update": 0, "values": [0.0, 0.18, 0.08]}
+
+[sub_resource type="Animation" id="PlayerHitFlashAnimation"]
+resource_name = "hit_flash"
+length = 0.22
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite2D:modulate")
+tracks/0/keys = {"times": PackedFloat32Array(0, 0.22), "transitions": PackedFloat32Array(1, 1), "update": 0, "values": [Color(1, 0.45, 0.45, 1), Color(1, 1, 1, 1)]}
+
+[sub_resource type="AnimationLibrary" id="PlayerAnimationLibrary"]
+_data = {
+&"double_jump_pop": SubResource("DoubleJumpPopAnimation"),
+&"air_dive": SubResource("AirDiveAnimation"),
+&"landing_squash": SubResource("LandingSquashAnimation"),
+&"takeoff": SubResource("TakeoffAnimation")
+}
+
+[sub_resource type="AnimationLibrary" id="PlayerHitAnimationLibrary"]
+_data = {
+&"hit_flash": SubResource("PlayerHitFlashAnimation")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_player"]
+size = Vector2(13.5, 11)
+
+[node name="Player" type="CharacterBody2D" unique_id=434880346]
+z_index = 5
+collision_mask = 3
+script = ExtResource("1_kc2or")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=683735896]
+texture_filter = 1
+position = Vector2(0, -12)
+scale = Vector2(0.5, 0.5)
+sprite_frames = ExtResource("11_frames")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=970027007]
+position = Vector2(1.25, -5.5)
+shape = SubResource("RectangleShape2D_player")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=723814321]
+root_node = NodePath("..")
+libraries/ = SubResource("PlayerAnimationLibrary")
+
+[node name="HitAnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("..")
+libraries/ = SubResource("PlayerHitAnimationLibrary")
+
+[node name="MagicAbility" type="Node" parent="."]
+script = ExtResource("9_player_magic")
+
+[node name="JumpSound" type="AudioStreamPlayer2D" parent="." unique_id=187190046]
+stream = ExtResource("3_jump")
+volume_db = -7.0
+
+[node name="LandSound" type="AudioStreamPlayer2D" parent="." unique_id=2012112228]
+stream = ExtResource("4_land")
+volume_db = -12.0
+pitch_scale = 0.8
+
+[node name="HurtSound" type="AudioStreamPlayer2D" parent="." unique_id=66457093]
+stream = ExtResource("5_hurt")
+volume_db = -7.0
+
+[node name="AttackSound" type="AudioStreamPlayer2D" parent="." unique_id=516915321]
+stream = ExtResource("6_attack")
+volume_db = -9.0
+
+[node name="MagicSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_attack")
+volume_db = -12.0
+pitch_scale = 1.35
+
+

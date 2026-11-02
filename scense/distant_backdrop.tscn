@@ -1,0 +1,36 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Texture2D" path="res://assests/sprites/island_distant_backdrop.png" id="1"]
+
+[sub_resource type="Animation" id="DriftAnimation"]
+resource_name = "drift"
+length = 11.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0, 5.5, 11.0),
+"transitions": PackedFloat32Array(1.0, 1.0, 1.0),
+"update": 0,
+"values": [Vector2(0, -2), Vector2(0, 2), Vector2(0, -2)]
+}
+
+[sub_resource type="AnimationLibrary" id="BackdropAnimationLibrary"]
+_data = {
+&"drift": SubResource("DriftAnimation")
+}
+
+[node name="DistantBackdrop" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("..")
+libraries/ = SubResource("BackdropAnimationLibrary")
+autoplay = "drift"
